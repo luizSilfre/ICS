@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3743C9EF-12A5-446A-AEE8-27CF94ABA2E2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Packages\IcsMacOS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsAndroid.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsLinux.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IcsMacOS">
+        <MSBuild Projects="..\Packages\IcsMacOS.dproj"/>
+    </Target>
+    <Target Name="IcsMacOS:Clean">
+        <MSBuild Projects="..\Packages\IcsMacOS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsMacOS:Make">
+        <MSBuild Projects="..\Packages\IcsMacOS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsAndroid">
+        <MSBuild Projects="..\Packages\IcsAndroid.dproj"/>
+    </Target>
+    <Target Name="IcsAndroid:Clean">
+        <MSBuild Projects="..\Packages\IcsAndroid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsAndroid:Make">
+        <MSBuild Projects="..\Packages\IcsAndroid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsLinux">
+        <MSBuild Projects="..\Packages\IcsLinux.dproj"/>
+    </Target>
+    <Target Name="IcsLinux:Clean">
+        <MSBuild Projects="..\Packages\IcsLinux.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsLinux:Make">
+        <MSBuild Projects="..\Packages\IcsLinux.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IcsMacOS;IcsAndroid;IcsLinux"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IcsMacOS:Clean;IcsAndroid:Clean;IcsLinux:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IcsMacOS:Make;IcsAndroid:Make;IcsLinux:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

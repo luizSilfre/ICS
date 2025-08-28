@@ -1,0 +1,300 @@
+object ClientForm: TClientForm
+  Left = 139
+  Top = 650
+  Caption = 'ICS PEM Testing - 25 June 2024'
+  ClientHeight = 476
+  ClientWidth = 920
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnShow = FormShow
+  Left = 139
+  Top = 650
+  DesignerMasterStyle = 0
+  object Log: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      '')
+    Align = Client
+    Size.Width = 920.000000000000000000
+    Size.Height = 349.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 916.000000000000000000
+    Viewport.Height = 345.000000000000000000
+  end
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 920.000000000000000000
+    Size.Height = 127.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label3: TLabel
+      AutoSize = True
+      Position.X = 8.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 95.199996948242190000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Certificates Folder'
+      TabOrder = 2
+      Left = 6
+      Top = 43
+    end
+    object CertFName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Text = 
+        'Home/Downloads/ICS-OpenSSL/ICS-RootCAs/ICS_Intermediate_Short-bu' +
+        'ndle.pem'
+      Position.X = 150.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 693.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      Left = 32
+      Top = 40
+    end
+    object doListFile: TButton
+      Default = True
+      Position.X = 13.000000000000000000
+      Position.Y = 95.000000000000000000
+      Size.Width = 75.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'List File'
+      OnClick = doListFileClick
+      Left = 230
+      Top = 40
+    end
+    object doClose: TButton
+      Position.X = 830.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 75.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Close'
+      OnClick = doCloseClick
+      Left = 214
+      Top = 8
+    end
+    object doListCA: TButton
+      Position.X = 112.000000000000000000
+      Position.Y = 95.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'List Internal CA'
+      OnClick = doListCAClick
+    end
+    object SelCertFile: TButton
+      Images = ImageList1
+      ImageIndex = 2
+      Position.X = 876.000000000000000000
+      Position.Y = 45.000000000000000000
+      Size.Width = 31.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      OnClick = SelCertFileClick
+      object SelCertDir: TButton
+        Images = ImageList1
+        ImageIndex = 2
+        Position.Y = -31.000000000000000000
+        Size.Width = 31.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        OnClick = SelCertDirClick
+      end
+    end
+    object Label1: TLabel
+      AutoSize = True
+      Position.X = 13.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 110.400001525878900000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Certificate File Name'
+      TabOrder = 0
+      Left = 6
+      Top = 43
+    end
+    object CertDir: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Text = 'Home/Downloads/ICS-OpenSSL/ICS-Certs'
+      Position.X = 150.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 695.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      Left = 32
+      Top = 40
+    end
+    object doCreateCert: TButton
+      Position.X = 235.000000000000000000
+      Position.Y = 95.000000000000000000
+      Size.Width = 166.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Create ICS Signed Cert'
+      OnClick = doCreateCertClick
+    end
+    object ShowRaw: TCheckBox
+      Position.X = 12.000000000000000000
+      Position.Y = 67.000000000000000000
+      Size.Width = 182.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Show Raw Certificate'
+    end
+    object doEventQueue: TButton
+      Position.X = 441.000000000000000000
+      Position.Y = 95.000000000000000000
+      Size.Width = 171.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'doEventQueue'
+      OnClick = doEventQueueClick
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 252
+    Top = 212
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Folder'
+      end
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Folder24'
+      end
+      item
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap.TransparentColor = 536870912
+        MultiResBitmap = <
+          item
+            Scale = 1.500000000000000000
+            Width = 24
+            Height = 24
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+              F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03D449444154484BBD545B6F5455185DFB5C3AF74E3B400BD4D6A4D6410D1A1E
+              4C836083424CD0C4A612D21012230FFE10E3933FC2189FF441437C1015B52142
+              7C51B108424B69CF8C76CA7466EA743A676698CB39735C7BCF454A5331165DC9
+              CEECB3F7B7D7FAF6F7AD3DF8AF21DABF98FFE4A0D79E7621848B03A7E7BA31FF
+              069B040E9C7E8FB31C87C9D140EEDA25AC276F43EFF141D3740A1AD00C13BAE9
+              47BDBC86D1D72E3F545C052C7D79C21B39F6368C800D38F780A65CF5D0AC6B70
+              6AAE0A129A014172CDE3B769A060FD88FE83EFFF3301EBE2710A4C33538789B3
+              52B2581E558426B701660FD184B3B18A3F12566B8DC827AE334E83D61344B3B1
+              8E67A66F6F116CDDE08B096FF8D819984112D629220504B73C0EDD44B396476E
+              8E648419390CC317E64D194761CD1F244913D9EB1F60F4D5992D02ED1425596B
+              06B307300C96A906B756403933D725EF7D7C0AD1E1BD880C9808854BE88D9611
+              DE1F82E1CFC2A96655CC8368DDE0C2044B7416464820F3D365B5215148B688EF
+              877456FC95B790B37E476C4F04FABE5164672F62F0F9F35BB29768097C7ED41B
+              79F94DD46C0BC5641991C72654B99233EFD2A63B7396FAB0D883A1239358BF33
+              8BE8E849F8FBEAB0BEFE188FC2592D81AF5EF4060F1D47E96E0203CF8D73C543
+              62E6330AECDC594A60E9C2B8171A1863135F402026C93C58DF7C8A47E12C958E
+              53B3E9029D410D56A34CF754B92AC9E42EB103672981466503BABF0F4E398386
+              5DA04845DD42A86D3AEBEA77C8CC5E41E6D7AB585BB889523A037FEC24763F3D
+              8D40640DBA9B807056905F5D845B5D6122696C24AE20FEC68D56418516666906
+              512779BD48812A9BAAEA2D98AD85A6DB8FD0BE49F43D3185FEB149EC7A8A59EF
+              17D08505AF5154A19EC79E482E330CA7B8013BBDA4BE9580C9EC216210BE5D70
+              1AF7504C2D525463936C949653880CBF84F090802FB48C9EC02A0C8D593A1966
+              2AADC5D275DE2B21848E4AEE378CBDFE8BEA6F77277BED43647EFE16F93BF32C
+              418A3B1E6F428B12BE28C35C49C82C25A7EA8D3CAF385A68F7CB6D5451E2AD3B
+              B82F62333ACEF2C78EB0917B205C595B0AB0376872C8BA105EF71B584B2610F4
+              357177E17BC4A76E6CBEC183E838CBECDD0DA1D355AE5CE51949A8A69CCB8746
+              CB0ABE62E10BA9653BB3D82597D856403A0B5A2FFCFD31665864A9F95721872F
+              C011948D53593BD50AAAF934EC9579A09A4631FB577924B62DD1CD8FE2DED0D1
+              77101DD9CB2F1E764D3895226D58A69D6D54F9826B765E2552B7B3EA6FE3C953
+              B7B6F06D2BB0707EDC1B38748E07537C1B29D44B25060B34CA0554F2CB245EC7
+              B3E772DB9EEFE06F05DAD32EE2A77E7828E1FF0CE04FEAFDE5E99263A82A0000
+              000049454E44AE426082}
+            FileName = 'F:\Delphimisc1\icon-glyf-free\24x24\folders24.bmp'
+          end>
+        Name = 'folders24'
+      end
+      item
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap.TransparentColor = 536870912
+        MultiResBitmap = <
+          item
+            Width = 16
+            Height = 16
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+              61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              022949444154384FA5534D6B1351143DF3E6ABCD8CCD54DBDAA24682A455E842
+              D0B5DD59B00B4517BAEC5AEAC2FFE13FD095D0A5DA2E44DC08A2E0266A410583
+              298D69ED2031C438CE3499AFE77D6FA62105C18207E6CDBB73EF3DEF9E7BDFE0
+              7FA188A5F6E83C97D610E66E6C48DFBFA088E4F2E20A74CB223304D21EBC6613
+              EEBBA759C410FE462A0966AFDF05E22E90D0174E31AA4E0F030F03F86E0341D7
+              078F43741A1FC10C9BF65D9CCDC934B15036A27E1F5BCF57337308D6CC05E885
+              09A86A82A9734B60E608BC6F55F26C487F4E60C8E4C34AD146D47C0730B1A4A1
+              270DDDA2D2E316D02739618823274E61F6DA6D54AE2C4BFF3E48196AEB0BFC33
+              C99715F8EEA6740829D04CD24FF292183C8DF165ED81F44CCEDF8231761A2C0A
+              A0180568B603B77A3F939084FB5334D06BEFA0F9F2496E034EF932ECE3258C1E
+              7568E61D04BBDB181D9F41C4BF23F2BF66049C1B32388D3C993C39BF0CDD36C1
+              48A06115A119BFA8EE6D0A64D8F33D14D263F8D9788F334B6F15D903259F6EE0
+              D6E5DBA94CC39EE8A1508CA03117887ED321D41FA860AA86A417A053FF246325
+              81614F4963B7FA02A5853B50D21F540EB9784A8FF08813C43E93BAF9FAF1E052
+              49829D370FC50BE395AB309D22F5929A29201244794C85229A6B5AC4494443C8
+              8BCFFE87E98B2B182BD9D4D5367DA1598B5B496469CF47B8E7A15D1717083879
+              E9D920EF004179F11E1D56238D5DB43EBCCA3D34E616F54180AEF0DCCDAD418E
+              C001827C2B71B8BF11F803D911DA5DD76D14C00000000049454E44AE426082}
+            FileName = 'F:\Delphimisc1\icon-glyf-free\16x16\folders16.bmp'
+          end>
+        Name = 'folders16'
+      end
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Item 0'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'folders16'
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'folders24'
+            SourceRect.Right = 24.000000000000000000
+            SourceRect.Bottom = 24.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'folders24'
+          end>
+      end>
+    Left = 325
+    Top = 214
+  end
+end

@@ -1,0 +1,3018 @@
+object HttpRestForm: THttpRestForm
+  Left = 86
+  Top = 176
+  Caption = 
+    'ICS FMX HTTPS REST and OAuth Demo - https://www.overbyte.be - 7 ' +
+    'Feb 2024'
+  ClientHeight = 744
+  ClientWidth = 900
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Orientations = [Landscape]
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Left = 86
+  Top = 176
+  DesignerMasterStyle = 0
+  object Label68: TLabel
+    AutoSize = True
+    Position.X = 205.000000000000000000
+    Position.Y = 290.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Web Server Port'
+    TabOrder = 1
+  end
+  object PageControl1: TTabControl
+    Size.Width = 900.000000000000000000
+    Size.Height = 391.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 2
+    TabPosition = Top
+    Sizes = (
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s
+      900s
+      365s)
+    object TabREST: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 84.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'HTTPS REST'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label1: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 880.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 
+          'REST Paramaters - Possible Data Types are: RPTypeStr, RPTypeInt,' +
+          ' RPTypeDate (ISO format), RPTypeFloat, RPTypeBool, RPTypeObj (Js' +
+          'on), RPTypeArray (comma list)'
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 145.000000000000000000
+        Size.Width = 272.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Raw Parameters (not blank overrides REST Parameters)'
+        TabOrder = 4
+      end
+      object Label5: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 185.000000000000000000
+        Size.Width = 167.199996948242200000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'URL (no ? or Params)'
+        TabOrder = 9
+      end
+      object Label33: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 293.000000000000000000
+        Size.Width = 176.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Double click on a Json stObject or stArray item to expand.  '
+        TabOrder = 12
+      end
+      object Label64: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 235.000000000000000000
+        Size.Width = 81.599998474121090000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Download File'
+        TabOrder = 15
+      end
+      object LabelProgress: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 333.000000000000000000
+        Size.Width = 880.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'LabelProgress'
+        TabOrder = 17
+      end
+      object Label65: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 265.000000000000000000
+        Size.Width = 75.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Upload File '
+        TabOrder = 18
+      end
+      object RestURL: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 13
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'https://acme-v02.api.letsencrypt.org/directory'
+          'https://jsonplaceholder.typicode.com/posts/1'
+          'https://jsonplaceholder.typicode.com/posts'
+          'https://jsonplaceholder.typicode.com/users'
+          'https://reqres.in/api/users/2'
+          'https://reqres.in/api/users'
+          'https://fakerestapi.azurewebsites.net/api/Activities'
+          'https://www.magsys.co.uk/delphi/dfiles/default.asp'
+          'https://www.telecom-tariffs.co.uk/serverinfo.htm'
+          'https://api.cix.uk/.well-known/openid-configuration'
+          'https://accounts.google.com/.well-known/openid-configuration'
+          'https://gmail.googleapis.com/$discovery/rest?version = v1'
+          'https://www.googleapis.com/gmail/v1/users/me/profile'
+          'https://www.googleapis.com/gmail/v1/users/me/messages'
+          'https://www.googleapis.com/gmail/v1/users/me/messages/{id}'
+          'https://www.googleapis.com/gmail/v1/users/me/settings/Pop'
+          'https://www.w3schools.com/xml/note.xml'
+          'https://www.w3schools.com/xml/simple.xml'
+          'https://www.w3schools.com/xml/cd_catalog.xml')
+        ItemIndex = 1
+        Text = 'https://jsonplaceholder.typicode.com/posts/1'
+        Position.X = 10.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 591.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ParamContent: TListBox
+        Position.X = 606.000000000000000000
+        Position.Y = 29.000000000000000000
+        Size.Width = 149.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'URL Eencoded ? URL'
+          'Json ? URL'
+          'XML ? URL'
+          'URL Eencoded Body'
+          'Json Body'
+          'XML Body')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 145.000000000000000000
+        Viewport.Height = 116.000000000000000000
+      end
+      object ReqMode: TListBox
+        Position.X = 618.000000000000000000
+        Position.Y = 197.000000000000000000
+        Size.Width = 109.000000000000000000
+        Size.Height = 46.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'Sync Request'
+          'Async Request')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 105.000000000000000000
+        Viewport.Height = 42.000000000000000000
+      end
+      object RawParams: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 10.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 717.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ReqType: TListBox
+        Position.X = 770.000000000000000000
+        Position.Y = 29.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 123.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'GET '
+          'POST '
+          'HEAD '
+          'PUT '
+          'DELETE'
+          'PATCH ')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 92.000000000000000000
+        Viewport.Height = 119.000000000000000000
+      end
+      object doStartReq: TButton
+        Position.X = 188.000000000000000000
+        Position.Y = 294.000000000000000000
+        Size.Width = 122.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 20
+        Text = 'Start REST Request'
+        OnClick = doStartReqClick
+      end
+      object doClear: TButton
+        Position.X = 416.000000000000000000
+        Position.Y = 294.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 22
+        Text = 'Clear Log'
+        OnClick = doClearClick
+      end
+      object doAbort: TButton
+        Position.X = 328.000000000000000000
+        Position.Y = 294.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 21
+        Text = 'Abort'
+        OnClick = doAbortClick
+      end
+      object doClearParams: TButton
+        Position.X = 511.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 111.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 23
+        Text = 'Clear REST Params'
+        OnClick = doClearParamsClick
+      end
+      object ReqMemStrategy: TListBox
+        Position.X = 739.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 141.000000000000000000
+        Size.Height = 83.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'Memory Stream'
+          'Memory/Temp File'
+          'Download File'
+          'Resume Download')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 137.000000000000000000
+        Viewport.Height = 79.000000000000000000
+      end
+      object ReqReplFile: TCheckBox
+        Position.X = 618.000000000000000000
+        Position.Y = 251.000000000000000000
+        Size.Width = 103.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+        Text = 'Replace Download File'
+        TextSettings.WordWrap = True
+      end
+      object RestDownFile: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 89.000000000000000000
+        Position.Y = 230.000000000000000000
+        Size.Width = 460.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object SelDirDown: TButton
+        Images = ImageList1
+        ImageIndex = 2
+        Position.X = 570.000000000000000000
+        Position.Y = 225.000000000000000000
+        Size.Width = 31.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        OnClick = SelDirDownClick
+      end
+      object doExit: TButton
+        Position.X = 639.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 75.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 19
+        Text = 'Exit'
+        OnClick = doExitClick
+      end
+      object HttpUploadFile: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 7
+        Position.X = 89.000000000000000000
+        Position.Y = 260.000000000000000000
+        Size.Width = 460.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object SelDirUpload: TButton
+        Images = ImageList1
+        ImageIndex = 2
+        Position.X = 570.000000000000000000
+        Position.Y = 258.000000000000000000
+        Size.Width = 31.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        OnClick = SelDirUploadClick
+      end
+      object HttpUploadStrat: TListBox
+        Position.X = 739.000000000000000000
+        Position.Y = 258.000000000000000000
+        Size.Width = 141.000000000000000000
+        Size.Height = 63.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'None'
+          'Simple'
+          'MIME Multipart')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 137.000000000000000000
+        Viewport.Height = 59.000000000000000000
+      end
+      object GridParams: TStringGrid
+        CanFocus = True
+        ClipChildren = True
+        Position.X = 10.000000000000000000
+        Position.Y = 23.000000000000000000
+        Size.Width = 566.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+        Options = [Editing, AlwaysShowEditor, ColumnResize, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+        OnCellClick = GridParamsCellClick
+        Viewport.Width = 546.000000000000000000
+        Viewport.Height = 95.000000000000000000
+        object StringColumn5: TStringColumn
+          Header = 'Name'
+          Size.Width = 126.000000000000000000
+        end
+        object StringColumn6: TStringColumn
+          Header = 'Value'
+          Size.Width = 300.000000000000000000
+        end
+        object StringColumn7: TStringColumn
+          Header = 'Data Type'
+          Size.Width = 118.000000000000000000
+        end
+      end
+    end
+    object TabSettings: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 1
+      Size.Width = 92.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'REST Settings'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label2: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 294.000000000000000000
+        Size.Width = 176.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Optional Root CA Bundle File'
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        AutoSize = True
+        Position.X = 481.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 56.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Special Extra Header(s)'
+        TabOrder = 7
+      end
+      object Label6: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 110.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Auth Login'
+        TabOrder = 8
+      end
+      object Label7: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 76.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Auth Password'
+        TabOrder = 10
+      end
+      object Label8: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 64.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Bearer/Token'
+        TabOrder = 14
+      end
+      object Label9: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 255.000000000000000000
+        Size.Width = 281.599975585937500000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Optional Client SSL Certificate (if required by server)'
+        TabOrder = 23
+      end
+      object Label22: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 230.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Log Directory'
+        TabOrder = 24
+      end
+      object Label31: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Proxy URL'
+        TabOrder = 25
+      end
+      object Label32: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 168.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'App Layer Proto Neg (ALPN)'
+        TabOrder = 26
+      end
+      object Label63: TLabel
+        AutoSize = True
+        Position.X = 460.000000000000000000
+        Position.Y = 295.000000000000000000
+        Size.Width = 128.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Accept Content-Type'
+        TabOrder = 27
+      end
+      object DebugLogging: TListBox
+        Position.X = 10.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 142.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        ItemIndex = 3
+        Items.Strings = (
+          'None'
+          'Connections'
+          'Parameters'
+          'SSL Negotiation'
+          'HTTP Headers'
+          'HTML Body'
+          'Ssl Low Level')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 117.000000000000000000
+        Viewport.Height = 138.000000000000000000
+      end
+      object SslSecurity: TListBox
+        Position.X = 148.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 272.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        OnClick = SettingsChange
+        DisableFocusEffect = True
+        ItemIndex = 9
+        Items.Strings = (
+          'Ignore'
+          'None'
+          'SSLv3 Only'
+          'TLSv1 Only'
+          'TLSv1.1 Only'
+          'TLSv1.2 Only'
+          'TLSv1.3 Only'
+          'TLSv1 or Better'
+          'TLSv1.1 or Better'
+          'TLSv1.2 or Better'
+          'Backward Ciphers'
+          'Intermediate Ciphers'
+          'High Ciphers, 2048 keys'
+          'High Ciphers, 3072 keys'
+          'High Ciphers, 7680 keys')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 149.000000000000000000
+        Viewport.Height = 268.000000000000000000
+      end
+      object CertVerMethod: TListBox
+        Position.X = 325.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 134.000000000000000000
+        Size.Height = 67.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'None'
+          'PEM Bundle File'
+          'Windows Cert Store')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 130.000000000000000000
+        Viewport.Height = 63.000000000000000000
+      end
+      object ReportCertChain: TCheckBox
+        Position.X = 325.000000000000000000
+        Position.Y = 100.000000000000000000
+        Size.Width = 111.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Report SSL Certificate Chain'
+        TextSettings.WordWrap = True
+      end
+      object SslClientCertFile: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 31
+        Position.X = 460.000000000000000000
+        Position.Y = 274.000000000000000000
+        Size.Width = 420.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ExtraHeaders: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'ExtraHeaders')
+        Position.X = 545.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 290.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        Viewport.Width = 286.000000000000000000
+        Viewport.Height = 55.000000000000000000
+      end
+      object AuthType: TListBox
+        Position.X = 325.000000000000000000
+        Position.Y = 135.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 175.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'None'
+          'Basic'
+          'NTLM'
+          'Digest MD5'
+          'Bearer Token'
+          'XAuth Token'
+          'Json Web Token'
+          'OAuth Bearer'
+          'Digest SHA-256')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 113.000000000000000000
+        Viewport.Height = 171.000000000000000000
+      end
+      object AuthLogin: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 16
+        Position.X = 542.000000000000000000
+        Position.Y = 105.000000000000000000
+        Size.Width = 293.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object AuthPassword: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 18
+        Position.X = 543.000000000000000000
+        Position.Y = 135.000000000000000000
+        Size.Width = 292.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object AuthBearer: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 21
+        Position.X = 543.000000000000000000
+        Position.Y = 165.000000000000000000
+        Hint = 'A token is used instead of Auth Login credentials'
+        Size.Width = 337.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object SslRootBundleFile: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 10.000000000000000000
+        Position.Y = 318.000000000000000000
+        Size.Width = 414.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object IpSockFamily: TListBox
+        Position.X = 10.000000000000000000
+        Position.Y = 155.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 101.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        DisableFocusEffect = True
+        ItemIndex = 0
+        Items.Strings = (
+          'Any'
+          'Prefer IPv4'
+          'Prefer IPv6'
+          'Only IPv4 '
+          'Only IPv6')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 117.000000000000000000
+        Viewport.Height = 97.000000000000000000
+      end
+      object SelDirLogs: TButton
+        Images = ImageList1
+        ImageIndex = 2
+        Position.X = 849.000000000000000000
+        Position.Y = 221.000000000000000000
+        Size.Width = 31.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 22
+        OnClick = SelDirLogsClick
+      end
+      object DirLogs: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 20
+        Position.X = 542.000000000000000000
+        Position.Y = 225.000000000000000000
+        Size.Width = 293.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ProxyURL: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 17
+        Position.X = 542.000000000000000000
+        Position.Y = 195.000000000000000000
+        Hint = 'Use a proxy URL, ie http://[user[:password]@]host:port'
+        Size.Width = 338.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object AlpnProtos: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 12
+        Position.X = 645.000000000000000000
+        Position.Y = 75.000000000000000000
+        Hint = 
+          'May be blank, or http/1.1 to negotiate that protocol specificall' +
+          'y'
+        Size.Width = 141.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object doListCertStore: TButton
+        Position.X = 205.000000000000000000
+        Position.Y = 285.000000000000000000
+        Size.Width = 85.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'List Cert Store'
+        OnClick = doListCertStoreClick
+      end
+      object ReqAccept: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 19
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          '*/*'
+          'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*'
+          'text/*, application/*'
+          'application/json'
+          'application/xml')
+        ItemIndex = -1
+        Text = '*.*'
+        Position.X = 460.000000000000000000
+        Position.Y = 319.000000000000000000
+        Size.Width = 335.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object CertRevoke: TCheckBox
+        Position.X = 325.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 124.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Check Cert Revoke'
+      end
+    end
+    object TabOAuth: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 2
+      Size.Width = 61.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'OAuth2'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label19: TLabel
+        AutoSize = True
+        Position.X = 147.000000000000000000
+        Position.Y = 295.000000000000000000
+        Size.Width = 90.399993896484380000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Web Server IP'
+        TabOrder = 6
+      end
+      object Label20: TLabel
+        AutoSize = True
+        Position.X = 384.000000000000000000
+        Position.Y = 295.000000000000000000
+        Size.Width = 30.399993896484380000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Port'
+        TabOrder = 14
+      end
+      object Label69: TLabel
+        AutoSize = True
+        Position.X = 147.000000000000000000
+        Position.Y = 325.000000000000000000
+        Size.Width = 92.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Edge Cache Path'
+        TabOrder = 15
+      end
+      object GroupBox1: TGroupBox
+        Position.X = 10.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 486.000000000000000000
+        Size.Height = 276.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label10: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 111.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Account Title'
+        end
+        object Label11: TLabel
+          AutoSize = True
+          Position.X = 3.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 79.199996948242190000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Console URL (optional)'
+        end
+        object Label12: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 125.000000000000000000
+          Size.Width = 87.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Client Secret'
+        end
+        object Label13: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 150.000000000000000000
+          Size.Width = 87.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Redirect-URI'
+        end
+        object Label14: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 175.000000000000000000
+          Size.Width = 101.599998474121100000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'App Token URL'
+        end
+        object Label21: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 200.000000000000000000
+          Size.Width = 77.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Scope'
+        end
+        object Label34: TLabel
+          AutoSize = True
+          Position.X = 217.000000000000000000
+          Position.Y = 225.000000000000000000
+          Size.Width = 58.399993896484380000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Prompt'
+        end
+        object Label54: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 100.000000000000000000
+          Size.Width = 77.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Client Id'
+        end
+        object Label55: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 75.000000000000000000
+          Size.Width = 131.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Application URL'
+        end
+        object Label66: TLabel
+          AutoSize = True
+          Position.X = 256.000000000000000000
+          Position.Y = 13.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'MS User Authority'
+        end
+        object OAuthAppUrl: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Position.X = 90.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthClientId: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 90.000000000000000000
+          Position.Y = 95.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthClientSecret: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.X = 90.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 236.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthRedirectUrl: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 7
+          Position.X = 90.000000000000000000
+          Position.Y = 145.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthTokenUrl: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 8
+          Position.X = 90.000000000000000000
+          Position.Y = 170.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthScope: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 9
+          Position.X = 90.000000000000000000
+          Position.Y = 195.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthOptNoRedir: TCheckBox
+          Position.X = 345.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 121.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = 'Auth No Redirect'
+        end
+        object OAuthPrompt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 11
+          Position.X = 263.000000000000000000
+          Position.Y = 220.000000000000000000
+          Size.Width = 203.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthAccess: TCheckBox
+          Position.X = 8.000000000000000000
+          Position.Y = 220.000000000000000000
+          Size.Width = 203.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 10
+          Text = 'Access Offline (get Refresh Token)'
+        end
+        object OAuthAccTitle: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          ItemHeight = 19.000000000000000000
+          ItemIndex = -1
+          Position.X = 90.000000000000000000
+          Position.Y = 20.000000000000000000
+          Hint = 'Click Button for List of Common Accounts'
+          Size.Width = 160.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = OAuthAccTitleChange
+        end
+        object OAuthConsoleUrl: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 90.000000000000000000
+          Position.Y = 45.000000000000000000
+          Size.Width = 376.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthUserAuth: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 12
+          ItemHeight = 19.000000000000000000
+          Items.Strings = (
+            'consumers'
+            'common'
+            'organizations'
+            '<tenant>')
+          ItemIndex = 0
+          Text = 'consumers'
+          Position.X = 321.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label70: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 250.000000000000000000
+          Size.Width = 111.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Account Login Hint'
+          TabOrder = 38
+        end
+        object OAuthLoginHint: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Position.X = 117.000000000000000000
+          Position.Y = 245.000000000000000000
+          Size.Width = 349.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object GroupBox2: TGroupBox
+        Position.X = 520.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 210.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label15: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 121.599998474121100000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Authorization Code'
+        end
+        object Label16: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 75.000000000000000000
+          Size.Width = 97.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Access Token'
+        end
+        object Label17: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 50.000000000000000000
+          Size.Width = 121.599998474121100000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Refresh Token'
+        end
+        object Label18: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 100.000000000000000000
+          Size.Width = 97.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Token Expires'
+        end
+        object LabelResult: TLabel
+          AutoSize = True
+          Position.X = 8.000000000000000000
+          Position.Y = 155.000000000000000000
+          Size.Width = 326.399993896484400000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Result: '
+        end
+        object OAuthAuthCode: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 110.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 231.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthAccToken: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Position.X = 110.000000000000000000
+          Position.Y = 70.000000000000000000
+          Enabled = False
+          Size.Width = 231.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthRefToken: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 110.000000000000000000
+          Position.Y = 45.000000000000000000
+          Size.Width = 231.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthExpire: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 110.000000000000000000
+          Position.Y = 95.000000000000000000
+          Enabled = False
+          Size.Width = 181.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object OAuthAutoRefresh: TCheckBox
+          Position.X = 8.000000000000000000
+          Position.Y = 123.000000000000000000
+          Size.Width = 261.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Automatic Refresh, Minutes Before Expiry'
+        end
+        object OAuthRefrMins: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Text = '120'
+          Position.X = 277.000000000000000000
+          Position.Y = 125.000000000000000000
+          Size.Width = 64.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object OAuthAuthType: TListBox
+        Position.X = 10.000000000000000000
+        Position.Y = 289.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        DisableFocusEffect = True
+        ItemIndex = 2
+        Items.Strings = (
+          'Local Web Server'
+          'Manual Code'
+          'Embedded Browser')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 109.000000000000000000
+        Viewport.Height = 56.000000000000000000
+      end
+      object OAuthWebIP: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        ItemHeight = 19.000000000000000000
+        ItemIndex = -1
+        Text = 'localhost'
+        Position.X = 238.000000000000000000
+        Position.Y = 290.000000000000000000
+        Size.Width = 128.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object OAuthWebPort: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        MaxLength = 5
+        Text = '8080'
+        Position.X = 431.000000000000000000
+        Position.Y = 290.000000000000000000
+        Size.Width = 56.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object doOAuthLogin: TButton
+        Position.X = 525.000000000000000000
+        Position.Y = 252.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Login to App (2)'
+        OnClick = doOAuthLoginClick
+      end
+      object doOAuthToken: TButton
+        Position.X = 525.000000000000000000
+        Position.Y = 283.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Get New Token (3)'
+        OnClick = doOAuthTokenClick
+      end
+      object doOAuthRefresh: TButton
+        Position.X = 525.000000000000000000
+        Position.Y = 314.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Refresh Token (4)'
+        OnClick = doOAuthRefreshClick
+      end
+      object doTestRedir: TButton
+        Position.X = 525.000000000000000000
+        Position.Y = 221.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Test Redirect (1)'
+        OnClick = doTestRedirClick
+      end
+      object doGrantCred: TButton
+        Position.X = 650.000000000000000000
+        Position.Y = 252.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Grant Credentials'
+        OnClick = doGrantCredClick
+      end
+      object doGrantPassword: TButton
+        Position.X = 650.000000000000000000
+        Position.Y = 283.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        Text = 'Grant Password'
+        OnClick = doGrantPasswordClick
+      end
+      object doOAuthConsole: TButton
+        Position.X = 650.000000000000000000
+        Position.Y = 221.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Access Console'
+        OnClick = doOAuthConsoleClick
+      end
+      object OAuthEdgeCache: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 12
+        MaxLength = 5
+        Position.X = 257.000000000000000000
+        Position.Y = 320.000000000000000000
+        Size.Width = 230.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object TabDNSHTTPS: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 3
+      Size.Width = 108.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'DNS over HTTPS'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label23: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 132.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'DNS over HTTPS URL'
+        TabOrder = 5
+      end
+      object Label222: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 142.399993896484400000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Domain Name to Lookup'
+        TabOrder = 8
+      end
+      object Label25: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 75.000000000000000000
+        Size.Width = 132.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Lookup Query Type'
+        TabOrder = 10
+      end
+      object DnsHttpsUrl: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'https://cloudflare-dns.com/dns-query'
+          'https://dns.google.com/resolve'
+          'https://dns.quad9.net/dns-query'
+          'https://doh.powerdns.org'
+          'https://doh.securedns.eu/dns-query'
+          'https://doh.appliedprivacy.net/query')
+        ItemIndex = 0
+        Text = 'https://cloudflare-dns.com/dns-query'
+        Position.X = 150.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 431.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object DnsDomainName: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'pool.ntp.org'
+          'www.google.com'
+          'google.com'
+          'www.overbyte.eu'
+          'overbyte.eu'
+          'wiki.overbyte.eu'
+          'magsys.co.uk'
+          'www.magsys.co.uk'
+          'ftp.magsys.co.uk'
+          'mail.magsys.co.uk'
+          'embarcadero.com'
+          'www.embarcadero.com')
+        ItemIndex = 0
+        Text = 'pool.ntp.org'
+        Position.X = 150.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object DnsQueryType: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        ItemHeight = 19.000000000000000000
+        ItemIndex = -1
+        Position.X = 150.000000000000000000
+        Position.Y = 68.000000000000000000
+        Size.Width = 201.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object doDNSJson: TButton
+        Position.X = 10.000000000000000000
+        Position.Y = 115.000000000000000000
+        Size.Width = 104.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'DNS Using Json'
+        OnClick = doDNSJsonClick
+      end
+      object DnsDnssec: TCheckBox
+        Position.X = 370.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 106.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'DNSSEC Data'
+      end
+      object DnsNoValidation: TCheckBox
+        Position.X = 370.000000000000000000
+        Position.Y = 75.000000000000000000
+        Size.Width = 116.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Disable Validation'
+      end
+      object doDnsQuery1: TButton
+        Position.X = 127.000000000000000000
+        Position.Y = 115.000000000000000000
+        Size.Width = 138.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Single Query (Wire Format)'
+        OnClick = doDnsQuery1Click
+      end
+      object doDnsQueryAll: TButton
+        Position.X = 278.000000000000000000
+        Position.Y = 115.000000000000000000
+        Size.Width = 138.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'All Queries (Wire Format)'
+        OnClick = doDnsQueryAllClick
+      end
+    end
+    object TabTwitter: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 4
+      Size.Width = 106.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Twiiter OAuth1A'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label37: TLabel
+        AutoSize = True
+        Position.X = 450.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 54.399993896484380000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tweet Text'
+        TabOrder = 4
+      end
+      object Label42: TLabel
+        AutoSize = True
+        Position.X = 450.000000000000000000
+        Position.Y = 145.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tweets Query '
+        TabOrder = 5
+      end
+      object Label43: TLabel
+        AutoSize = True
+        Position.X = 450.000000000000000000
+        Position.Y = 165.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tweet ID List (commas)'
+        TabOrder = 9
+      end
+      object BoxTritterSettings: TGroupBox
+        Position.X = 15.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 429.000000000000000000
+        Size.Height = 339.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label36: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 50.000000000000000000
+          Size.Width = 107.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'API Secret Key'
+        end
+        object Label38: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 143.000000000000000000
+          Size.Width = 121.599998474121100000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Screen Name and ID'
+        end
+        object Label39: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 95.000000000000000000
+          Size.Width = 107.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Access Token'
+        end
+        object Label40: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 91.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Access Secret'
+        end
+        object Label35: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 77.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'API Key'
+        end
+        object Label41: TLabel
+          AutoSize = True
+          Position.X = 8.000000000000000000
+          Position.Y = 170.000000000000000000
+          Size.Width = 412.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          Text = 
+            'To read and send Tweets, you need a developer account and then s' +
+            'et-up an App with a Callback URL of http://localhost:8080/twitte' +
+            'r/ and copy API Key/Secret above. The Access Token and Secret ma' +
+            'y be copied from the developer account to avoid needing to login' +
+            ' for the account owning the application.  Tokens don'#39't expire.'
+        end
+        object TwitResultLabel: TLabel
+          AutoSize = True
+          Position.X = 10.000000000000000000
+          Position.Y = 313.000000000000000000
+          Size.Width = 412.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Result: '
+        end
+        object TwitApiSecret: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 90.000000000000000000
+          Position.Y = 46.000000000000000000
+          Size.Width = 326.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitAccToken: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 90.000000000000000000
+          Position.Y = 90.000000000000000000
+          Size.Width = 326.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitAccSecret: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.X = 90.000000000000000000
+          Position.Y = 115.000000000000000000
+          Size.Width = 326.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitApiKey: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 90.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 326.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitForceLogin: TCheckBox
+          Position.X = 10.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 191.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Force Login (for different users) '
+        end
+        object TwitScrnName: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Position.X = 117.000000000000000000
+          Position.Y = 140.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitScrnId: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 6
+          Position.X = 277.000000000000000000
+          Position.Y = 140.000000000000000000
+          Size.Width = 129.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object TwitAuthType: TListBox
+          Position.X = 233.000000000000000000
+          Position.Y = 244.000000000000000000
+          Size.Width = 142.000000000000000000
+          Size.Height = 66.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          DisableFocusEffect = True
+          ItemIndex = 2
+          Items.Strings = (
+            'Local Web Server'
+            'Manual Code'
+            'Embedded Browser')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 138.000000000000000000
+          Viewport.Height = 62.000000000000000000
+        end
+      end
+      object doTwitLogin: TButton
+        Position.X = 450.000000000000000000
+        Position.Y = 210.000000000000000000
+        Size.Width = 92.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Login'
+        OnClick = doTwitLoginClick
+      end
+      object TwitMsg: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'Testing Tweeting from a Delphi Windows application.  ')
+        MaxLength = 280
+        Position.X = 454.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 417.000000000000000000
+        Size.Height = 104.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 413.000000000000000000
+        Viewport.Height = 100.000000000000000000
+      end
+      object doTwitMsg: TButton
+        Position.X = 555.000000000000000000
+        Position.Y = 210.000000000000000000
+        Size.Width = 95.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Send Tweet'
+        OnClick = doTwitMsgClick
+      end
+      object TwitQuery: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Text = 'from:twitterdev'
+        Position.X = 535.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 336.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object TwitIdList: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Text = '1285241443603279872'
+        Position.X = 535.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 265.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object doTwitAccSett: TButton
+        Position.X = 450.000000000000000000
+        Position.Y = 241.000000000000000000
+        Size.Width = 95.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Account Settings'
+        OnClick = doTwitAccSettClick
+      end
+      object doTwitQuery: TButton
+        Position.X = 662.000000000000000000
+        Position.Y = 210.000000000000000000
+        Size.Width = 101.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Query Tweets'
+        OnClick = doTwitQueryClick
+      end
+      object doTwitGetId: TButton
+        Position.X = 662.000000000000000000
+        Position.Y = 241.000000000000000000
+        Size.Width = 101.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Get Tweets by LD'
+        OnClick = doTwitGetIdClick
+      end
+    end
+    object TabSms: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 5
+      Size.Width = 74.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Send SMS'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object BoxSmsMsg: TGroupBox
+        Position.X = 10.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 506.000000000000000000
+        Size.Height = 161.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label26: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 52.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Sender Number'
+        end
+        object Label28: TLabel
+          AutoSize = True
+          Position.X = 200.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 62.399993896484380000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'SMS Dest Number(s)'
+        end
+        object Label29: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 82.000000000000000000
+          Size.Width = 56.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Message'
+        end
+        object SmsAccSender: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Text = 'Delphi-ICS'
+          Position.X = 64.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 126.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object SmsMsgText: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Lines.Strings = (
+            'My test SMS message text. ')
+          Position.X = 64.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 412.000000000000000000
+          Size.Height = 71.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 408.000000000000000000
+          Viewport.Height = 67.000000000000000000
+        end
+        object SmsDestNums: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Lines.Strings = (
+            '')
+          Position.X = 270.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 206.000000000000000000
+          Size.Height = 56.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Viewport.Width = 202.000000000000000000
+          Viewport.Height = 52.000000000000000000
+        end
+      end
+      object GroupBox3: TGroupBox
+        Position.X = 10.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 388.000000000000000000
+        Size.Height = 126.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label24: TLabel
+          AutoSize = True
+          Position.X = 168.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 94.399993896484380000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Password'
+        end
+        object Label27: TLabel
+          AutoSize = True
+          Position.X = 10.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 111.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Account: Name'
+        end
+        object LabelKapowCredit: TLabel
+          AutoSize = True
+          Position.X = 290.000000000000000000
+          Position.Y = 68.000000000000000000
+          Size.Width = 90.399993896484380000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Credits: '
+        end
+        object LabelKapowResult: TLabel
+          AutoSize = True
+          Position.X = 10.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 370.399993896484400000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Result:'
+        end
+        object KapowAccPw: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 165.000000000000000000
+          Position.Y = 33.000000000000000000
+          Size.Width = 126.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object KapowAccName: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 8.000000000000000000
+          Position.Y = 33.000000000000000000
+          Size.Width = 126.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object doKapowSend: TButton
+          Position.X = 10.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Send SMS'
+          OnClick = doKapowSendClick
+        end
+        object doKapowCheck: TButton
+          Enabled = False
+          Position.X = 97.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Check Delivery'
+          OnClick = doKapowCheckClick
+        end
+        object doKapowCredit: TButton
+          Position.X = 200.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Check Credit'
+          OnClick = doKapowCreditClick
+        end
+      end
+      object BoxSmsWorks: TGroupBox
+        Position.X = 414.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 413.000000000000000000
+        Size.Height = 126.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Label30: TLabel
+          AutoSize = True
+          Position.X = 8.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 142.399993896484400000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Login Json Lines'
+        end
+        object LabelSmsWorksCredits: TLabel
+          AutoSize = True
+          Position.X = 299.000000000000000000
+          Position.Y = 67.000000000000000000
+          Size.Width = 98.399993896484380000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Credits: '
+        end
+        object LabelSmsWorksResult: TLabel
+          AutoSize = True
+          Position.X = 23.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 350.399993896484400000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Result:'
+        end
+        object doSmsWorksSend: TButton
+          Position.X = 17.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Send SMS'
+          OnClick = doSmsWorksSendClick
+        end
+        object doSmsWorksCheck: TButton
+          Enabled = False
+          Position.X = 114.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Check Delivery'
+          OnClick = doSmsWorksCheckClick
+        end
+        object doSmsWorksCredit: TButton
+          Position.X = 212.000000000000000000
+          Position.Y = 63.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Check Credit'
+          OnClick = doSmsWorksCreditClick
+        end
+        object SmsWorksJWT: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 38
+          Position.X = 8.000000000000000000
+          Position.Y = 33.000000000000000000
+          Size.Width = 381.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+    object TabEmail: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 6
+      Size.Width = 78.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Send Email'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object Label56: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 112.000000000000000000
+        Size.Width = 63.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'From'
+        TabOrder = 5
+      end
+      object Label57: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 135.000000000000000000
+        Size.Width = 63.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'CC'
+        TabOrder = 11
+      end
+      object Label58: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 75.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Subject'
+        TabOrder = 14
+      end
+      object Label59: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 91.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Recipienets'
+        TabOrder = 16
+      end
+      object Label60: TLabel
+        AutoSize = True
+        Position.X = 10.000000000000000000
+        Position.Y = 194.000000000000000000
+        Size.Width = 67.199996948242190000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Message'
+        TabOrder = 17
+      end
+      object Label61: TLabel
+        AutoSize = True
+        Position.X = 645.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 132.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Message Id to Read'
+        TabOrder = 18
+      end
+      object LabelEmailResult: TLabel
+        AutoSize = True
+        Position.X = 425.000000000000000000
+        Position.Y = 151.000000000000000000
+        Size.Width = 201.599975585937500000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Result:'
+        TabOrder = 19
+      end
+      object Label62: TLabel
+        AutoSize = True
+        Position.X = 702.000000000000000000
+        Position.Y = 184.000000000000000000
+        Size.Width = 180.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Message Label or Folder'
+        TabOrder = 20
+      end
+      object EmailRecipList: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'To???'
+          '')
+        Position.X = 80.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 326.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 322.000000000000000000
+        Viewport.Height = 77.000000000000000000
+      end
+      object EmailFrom: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Text = 'From??'
+        Position.X = 80.000000000000000000
+        Position.Y = 105.000000000000000000
+        Size.Width = 326.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EmailCC: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 80.000000000000000000
+        Position.Y = 130.000000000000000000
+        Size.Width = 326.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EmailSubject: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Text = 'Subject???'
+        Position.X = 80.000000000000000000
+        Position.Y = 155.000000000000000000
+        Size.Width = 326.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object doEmailSend: TButton
+        Position.X = 426.000000000000000000
+        Position.Y = 14.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Send Mail'
+        OnClick = doEmailSendClick
+      end
+      object EmailMessage: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'Test email from TIcsRestEmail component. ')
+        Position.X = 80.000000000000000000
+        Position.Y = 190.000000000000000000
+        Size.Width = 591.000000000000000000
+        Size.Height = 126.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 587.000000000000000000
+        Viewport.Height = 122.000000000000000000
+      end
+      object doEmailList: TButton
+        Position.X = 425.000000000000000000
+        Position.Y = 49.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'List Gmail Ids'
+        OnClick = doEmailListClick
+      end
+      object doEmailRead: TButton
+        Position.X = 535.000000000000000000
+        Position.Y = 49.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        Text = 'Read Mail'
+        OnClick = doEmailReadClick
+      end
+      object EmailReadMessId: TListBox
+        Position.X = 645.000000000000000000
+        Position.Y = 30.000000000000000000
+        Size.Width = 218.000000000000000000
+        Size.Height = 146.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        DisableFocusEffect = True
+        ItemHeight = 14.000000000000000000
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 214.000000000000000000
+        Viewport.Height = 142.000000000000000000
+      end
+      object doEmailHdrs: TButton
+        Position.X = 535.000000000000000000
+        Position.Y = 14.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Read Headers'
+        OnClick = doEmailHdrsClick
+      end
+      object EmailRawHdrs: TCheckBox
+        Position.X = 426.000000000000000000
+        Position.Y = 116.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Show Raw Headers and Content (Gmail)'
+        TextSettings.WordWrap = True
+      end
+      object doEmailDelete: TButton
+        Position.X = 535.000000000000000000
+        Position.Y = 83.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Delete Email'
+        OnClick = doEmailDeleteClick
+      end
+      object EmailHdrFolder: TListBox
+        Position.X = 701.000000000000000000
+        Position.Y = 208.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 141.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        DisableFocusEffect = True
+        ItemHeight = 14.000000000000000000
+        Items.Strings = (
+          'Inbox'
+          'Sent'
+          'SentItems'
+          'Unread'
+          'Important'
+          'Drafts'
+          'DeletedItems'
+          'Outbox'
+          'Trash '
+          'JunkEmail'
+          'Category_Personal'
+          'Category_Updates')
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 101.000000000000000000
+        Viewport.Height = 137.000000000000000000
+      end
+    end
+    object TabEmailSet: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 7
+      Size.Width = 94.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Email Settings'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object GroupBox4: TGroupBox
+        Position.X = 10.000000000000000000
+        Position.Y = 3.000000000000000000
+        Size.Width = 871.000000000000000000
+        Size.Height = 316.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label44: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 50.000000000000000000
+          Size.Width = 77.599998474121090000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'App Client ID'
+        end
+        object Label45: TLabel
+          AutoSize = True
+          Position.X = 8.000000000000000000
+          Position.Y = 174.000000000000000000
+          Size.Width = 103.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Token Account'
+        end
+        object Label46: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 150.000000000000000000
+          Size.Width = 107.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Access Token'
+        end
+        object Label47: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 125.000000000000000000
+          Size.Width = 107.199996948242200000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Refresh Token'
+        end
+        object Label48: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 87.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Enail Provider'
+        end
+        object Label49: TLabel
+          AutoSize = True
+          Position.X = 10.000000000000000000
+          Position.Y = 208.000000000000000000
+          Size.Width = 616.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = 
+            'To access email using REST APIs or OAuth2/SMTP/POP3 an '#39'applicat' +
+            'ion account'#39' needs to be created though the provider console. Th' +
+            'is is generally done once by the developer and the application A' +
+            'PI ID and secret are then distributed with the application (usua' +
+            'lly hidden).'
+        end
+        object EmailOAResultLabel: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 293.000000000000000000
+          Size.Width = 848.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Result: '
+        end
+        object Label51: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 75.000000000000000000
+          Size.Width = 87.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Client Secret'
+        end
+        object Label52: TLabel
+          AutoSize = True
+          Position.X = 5.000000000000000000
+          Position.Y = 100.000000000000000000
+          Size.Width = 91.199996948242190000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Email Account'
+        end
+        object Label53: TLabel
+          AutoSize = True
+          Position.X = 207.000000000000000000
+          Position.Y = 98.000000000000000000
+          Size.Width = 164.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = '(me for any)  Account Hint'
+        end
+        object Label50: TLabel
+          AutoSize = True
+          Position.X = 439.000000000000000000
+          Position.Y = 175.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Expiry'
+        end
+        object Label67: TLabel
+          AutoSize = True
+          Position.X = 269.000000000000000000
+          Position.Y = 12.000000000000000000
+          Size.Width = 74.399993896484380000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'MS User Authority'
+        end
+        object EmailClientId: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Position.X = 90.000000000000000000
+          Position.Y = 45.000000000000000000
+          Size.Width = 526.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailAccToken: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 7
+          Position.X = 90.000000000000000000
+          Position.Y = 145.000000000000000000
+          Enabled = False
+          Size.Width = 526.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailRefrToken: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 6
+          Position.X = 90.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 526.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailAccount: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.X = 90.000000000000000000
+          Position.Y = 95.000000000000000000
+          Size.Width = 111.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailForceLogin: TCheckBox
+          Position.X = 493.000000000000000000
+          Position.Y = 12.000000000000000000
+          Size.Width = 123.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Force Login (for different users) '
+          TextSettings.WordWrap = True
+        end
+        object EmailTokenAccnt: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 8
+          Position.X = 90.000000000000000000
+          Position.Y = 170.000000000000000000
+          Size.Width = 331.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailAccExpiry: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 9
+          Position.X = 487.000000000000000000
+          Position.Y = 170.000000000000000000
+          Enabled = False
+          Size.Width = 129.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailRestType: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          ItemHeight = 19.000000000000000000
+          Items.Strings = (
+            'Google Gmail'
+            'Microsoft REST Mail APIs'
+            'Microsoft SMTP/POP3')
+          ItemIndex = -1
+          Position.X = 90.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 171.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailClientSecret: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 89.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 527.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object doEmaiTstRedir: TButton
+          Position.X = 125.000000000000000000
+          Position.Y = 262.000000000000000000
+          Size.Width = 106.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 10
+          Text = 'Test Redirect'
+          OnClick = doEmaiTstRedirClick
+        end
+        object doEmailOALogin: TButton
+          Position.X = 245.000000000000000000
+          Position.Y = 262.000000000000000000
+          Size.Width = 106.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 11
+          Text = 'Login to Email'
+          OnClick = doEmailOALoginClick
+        end
+        object doEmailOARefresh: TButton
+          Position.X = 363.000000000000000000
+          Position.Y = 262.000000000000000000
+          Size.Width = 106.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 12
+          Text = 'Refresh Token'
+          OnClick = doEmailOARefreshClick
+        end
+        object doEmailOACons: TButton
+          Position.X = 5.000000000000000000
+          Position.Y = 262.000000000000000000
+          Size.Width = 106.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 13
+          Text = 'Access Console'
+          OnClick = doEmailOAConsClick
+        end
+        object EmailAccountHint: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Position.X = 347.000000000000000000
+          Position.Y = 95.000000000000000000
+          Size.Width = 269.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailUserAuth: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 14
+          ItemHeight = 19.000000000000000000
+          Items.Strings = (
+            'consumers'
+            'common'
+            'organizations'
+            '<tenant>')
+          ItemIndex = 0
+          Text = 'consumers'
+          Position.X = 321.000000000000000000
+          Position.Y = 17.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object EmailAuthType: TListBox
+          Position.X = 630.000000000000000000
+          Position.Y = 22.000000000000000000
+          Size.Width = 146.000000000000000000
+          Size.Height = 64.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          DisableFocusEffect = True
+          ItemIndex = 2
+          Items.Strings = (
+            'Local Web Server'
+            'Manual Code'
+            'Embedded Browser')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 142.000000000000000000
+          Viewport.Height = 60.000000000000000000
+        end
+      end
+    end
+    object TabInetAlive: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      ImageIndex = 8
+      Size.Width = 91.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Internet Alive'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object GroupBoxAlive: TGroupBox
+        Position.X = 10.000000000000000000
+        Size.Width = 366.000000000000000000
+        Size.Height = 179.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object LabelInetAlive: TLabel
+          AutoSize = True
+          Position.X = 8.000000000000000000
+          Position.Y = 112.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Internet Alive Result: '
+        end
+        object AliveMethod: TListBox
+          Position.X = 10.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 86.000000000000000000
+          Size.Height = 84.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          DisableFocusEffect = True
+          ItemIndex = 3
+          Items.Strings = (
+            'Ping'
+            'Http'
+            'Both'
+            'Either')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 82.000000000000000000
+          Viewport.Height = 80.000000000000000000
+        end
+        object AliveNets: TListBox
+          Position.X = 115.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 96.000000000000000000
+          Size.Height = 66.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          DisableFocusEffect = True
+          ItemIndex = 0
+          Items.Strings = (
+            'IPv4'
+            'IPv6'
+            'Both')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 92.000000000000000000
+          Viewport.Height = 62.000000000000000000
+        end
+        object doAliveStart: TButton
+          Position.X = 230.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Start'
+          OnClick = doAliveStartClick
+        end
+        object doAliveStop: TButton
+          Enabled = False
+          Position.X = 230.000000000000000000
+          Position.Y = 61.000000000000000000
+          Size.Width = 75.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Stop'
+          OnClick = doAliveStopClick
+        end
+      end
+    end
+  end
+  object LogWin: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 542.000000000000000000
+    Size.Width = 900.000000000000000000
+    Size.Height = 202.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 896.000000000000000000
+    Viewport.Height = 198.000000000000000000
+  end
+  object OpenDirDiag: TOpenDialog
+    Options = [ofHideReadOnly, ofNoValidate, ofPathMustExist, ofNoTestFileCreate, ofEnableSizing]
+    Title = 'Select Directory'
+    Left = 215
+    Top = 750
+  end
+  object TimerLog: TTimer
+    OnTimer = TimerLogTimer
+    Left = 850
+    Top = 400
+  end
+  object GridJsonResp: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 1.000000000000000000
+    Position.Y = 383.000000000000000000
+    Size.Width = 900.000000000000000000
+    Size.Height = 158.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    RowCount = 10
+    Options = [ColumnResize, ColLines, RowLines, Tabs, Header, AutoDisplacement]
+    OnCellDblClick = GridJsonRespCellDblClick
+    Viewport.Width = 880.000000000000000000
+    Viewport.Height = 133.000000000000000000
+    object StringColumn1: TStringColumn
+      Size.Width = 136.000000000000000000
+    end
+    object StringColumn2: TStringColumn
+      Size.Width = 300.000000000000000000
+    end
+    object StringColumn3: TStringColumn
+      Size.Width = 181.000000000000000000
+      object StringColumn4: TStringColumn
+        Size.Width = 75.000000000000000000
+      end
+    end
+    object StringColumn8: TStringColumn
+    end
+  end
+  object HttpRest1: TSslHttpRest
+    LocalAddr = '0.0.0.0'
+    LocalAddr6 = '::'
+    ProxyPort = '80'
+    Agent = 'Mozilla/4.0'
+    Accept = 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*'
+    NoCache = False
+    ResponseNoException = False
+    ContentTypePost = 'application/x-www-form-urlencoded'
+    LmCompatLevel = 0
+    RequestVer = '1.1'
+    FollowRelocation = True
+    LocationChangeMaxCount = 5
+    ServerAuth = httpAuthNone
+    ProxyAuth = httpAuthNone
+    BandwidthLimit = 10000
+    BandwidthSampling = 1000
+    Options = [httpoEnableContentCoding]
+    Timeout = 30
+    SocksLevel = '5'
+    SocksAuthentication = socksNoAuthentication
+    SocketFamily = sfAny
+    SocketErrs = wsErrTech
+    RestParams.PContent = PContUrlencoded
+    RestParams.RfcStrict = False
+    RestParams.FormDataUtf8 = True
+    RestParams = <>
+    DebugLevel = DebugSsl
+    MaxBodySize = 100000000
+    SslCliSecurity = sslCliSecTls1
+    SslSessCache = True
+    CertVerMethod = CertVerNone
+    SslRootFile = 'RootCaCertsBundle.pem'
+    SslRevocation = False
+    SslReportChain = False
+    SslAllowSelfSign = False
+    HttpMemStrategy = HttpStratMem
+    HttpDownReplace = False
+    ResumeMinSize = 65535
+    ProgIntSecs = 2
+    ShowProgress = False
+    HttpUploadStrat = HttpUploadNone
+    SharedSslCtx = False
+    NoSSL = False
+    MaxLogParams = 4096
+    OnHttpRestProg = HttpRest1HttpRestProg
+    OnRestRequestDone = HttpRest1RestRequestDone
+    Left = 20
+    Top = 400
+  end
+  object RestOAuth1: TRestOAuth
+    DebugLevel = DebugConn
+    AuthType = OAuthTypeWeb
+    OAOptions = []
+    ProtoType = OAuthv2
+    RefreshAuto = False
+    RefrMinsPrior = 0
+    WebSrvIP = '127.0.0.1'
+    WebSrvPort = '8080'
+    RefreshOffline = False
+    LoginPrompt = 'consent'
+    ResponseMode = 'query'
+    MsUserAuthority = 'consumers'
+    OnOAuthEmbed = RestOAuth1OAuthEmbed
+    OnOAuthAuthUrl = RestOAuth1OAuthAuthUrl
+    OnOAuthProg = RestOAuth1OAuthProg
+    OnOAuthNewCode = RestOAuth1OAuthNewCode
+    OnOAuthNewToken = RestOAuth1OAuthNewToken
+    Left = 95
+    Top = 400
+  end
+  object DnsQueryHttps1: TDnsQueryHttps
+    Port = '53'
+    Proto = 'udp'
+    MultiThreaded = False
+    Timeout = 5
+    ServerStrat = SrvStratOne
+    ServerCur = 0
+    ServerMax = 4
+    OnRequestDone = DnsQueryHttps1RequestDone
+    DnsSrvUrl = 'https://cloudflare-dns.com/dns-query'
+    DebugLevel = DebugNone
+    OnDnsProg = DnsQueryHttps1DnsProg
+    Left = 680
+    Top = 400
+  end
+  object IcsSMS1: TIcsSMS
+    SmsProvider = SmsProvKapow
+    SendDT = 43627.796545659720000000
+    DebugLevel = DebugNone
+    OnSmsProg = IcsSMS1SmsProg
+    OnSmsDone = IcsSMS1SmsDone
+    Left = 265
+    Top = 405
+  end
+  object SslHtmlSmtpCli1: TSslHtmlSmtpCli
+    Tag = 0
+    ShareMode = smtpShareDenyWrite
+    LocalAddr = '0.0.0.0'
+    LocalAddr6 = '::'
+    Port = 'smtp'
+    AuthType = smtpAuthNone
+    ConfirmReceipt = False
+    HdrPriority = smtpPriorityNone
+    CharSet = 'windows-1252'
+    ConvertToCharset = True
+    WrapMsgMaxLineLen = 76
+    SendMode = smtpToStream
+    DefaultEncoding = smtpEnc7bit
+    Allow8bitChars = True
+    FoldHeaders = False
+    WrapMessageText = False
+    ContentType = smtpPlainText
+    OwnHeaders = False
+    OnBeforeOutStreamFree = SslHtmlSmtpCli1BeforeOutStreamFree
+    XMailer = 'ICS SMTP Component V%VER%'
+    ProxyType = smtpNoProxy
+    ProxyHttpAuthType = htatDetect
+    SocketFamily = sfIPv4
+    SocketErrs = wsErrTech
+    Timeout = 15
+    SslType = smtpTlsNone
+    HtmlCharSet = 'windows-1252'
+    HtmlConvertToCharset = True
+    Left = 350
+    Top = 405
+  end
+  object IcsTwitter1: TIcsTwitter
+    ForceLogin = False
+    DebugLevel = DebugNone
+    OAAuthType = OAuthTypeWeb
+    OnTwitProg = HttpRest1HttpRestProg
+    OnTwitNewToken = IcsTwitter1TwitNewToken
+    Left = 515
+    Top = 400
+  end
+  object IcsRestEmail1: TIcsRestEmail
+    RestEmailType = RestEmailGoogle
+    ForceLogin = False
+    LoginTimeout = 120
+    HdrFieldList = 'to,from,subject,date'
+    DebugLevel = DebugNone
+    OAAuthType = OAuthTypeWeb
+    MsUserAuth = 'consumers'
+    OnEmailProg = HttpRest1HttpRestProg
+    OnEmailNewToken = IcsRestEmail1EmailNewToken
+    Left = 440
+    Top = 405
+  end
+  object IcsInetAlive1: TIcsInetAlive
+    AliveMethod = AliveMethHttp
+    AliveNets = AliveNetv4
+    HostIPv4 = 'www.msftconnecttest.com'
+    HostIPv6 = 'ipv6.msftconnecttest.com'
+    HttpPage = '/connecttest.txt'
+    HttpText = 'Microsoft Connect Test'
+    LocalIPv4 = '0.0.0.0'
+    LocalIPv6 = '::'
+    AutoStart = False
+    OnlineSecs = 60
+    OfflineSecs = 5
+    PingHops = 15
+    PingMaxSecs = 4
+    PingCheckAddr = True
+    FailedWaitSecs = 30
+    DebugLevel = DebugNone
+    OnAliveChange = IcsInetAlive1AliveChange
+    OnAliveProg = HttpRest1HttpRestProg
+    Left = 590
+    Top = 400
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Folder'
+      end
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Folder24'
+      end
+      item
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap.TransparentColor = 536870912
+        MultiResBitmap = <
+          item
+            Scale = 1.500000000000000000
+            Width = 24
+            Height = 24
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+              F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03D449444154484BBD545B6F5455185DFB5C3AF74E3B400BD4D6A4D6410D1A1E
+              4C836083424CD0C4A612D21012230FFE10E3933FC2189FF441437C1015B52142
+              7C51B108424B69CF8C76CA7466EA743A676698CB39735C7BCF454A5331165DC9
+              CEECB3F7B7D7FAF6F7AD3DF8AF21DABF98FFE4A0D79E7621848B03A7E7BA31FF
+              069B040E9C7E8FB31C87C9D140EEDA25AC276F43EFF141D3740A1AD00C13BAE9
+              47BDBC86D1D72E3F545C052C7D79C21B39F6368C800D38F780A65CF5D0AC6B70
+              6AAE0A129A014172CDE3B769A060FD88FE83EFFF3301EBE2710A4C33538789B3
+              52B2581E558426B701660FD184B3B18A3F12566B8DC827AE334E83D61344B3B1
+              8E67A66F6F116CDDE08B096FF8D819984112D629220504B73C0EDD44B396476E
+              8E648419390CC317E64D194761CD1F244913D9EB1F60F4D5992D02ED1425596B
+              06B307300C96A906B756403933D725EF7D7C0AD1E1BD880C9808854BE88D9611
+              DE1F82E1CFC2A96655CC8368DDE0C2044B7416464820F3D365B5215148B688EF
+              877456FC95B790B37E476C4F04FABE5164672F62F0F9F35BB29768097C7ED41B
+              79F94DD46C0BC5641991C72654B99233EFD2A63B7396FAB0D883A1239358BF33
+              8BE8E849F8FBEAB0BEFE188FC2592D81AF5EF4060F1D47E96E0203CF8D73C543
+              62E6330AECDC594A60E9C2B8171A1863135F402026C93C58DF7C8A47E12C958E
+              53B3E9029D410D56A34CF754B92AC9E42EB103672981466503BABF0F4E398386
+              5DA04845DD42A86D3AEBEA77C8CC5E41E6D7AB585BB889523A037FEC24763F3D
+              8D40640DBA9B807056905F5D845B5D6122696C24AE20FEC68D56418516666906
+              512779BD48812A9BAAEA2D98AD85A6DB8FD0BE49F43D3185FEB149EC7A8A59EF
+              17D08505AF5154A19EC79E482E330CA7B8013BBDA4BE9580C9EC216210BE5D70
+              1AF7504C2D525463936C949653880CBF84F090802FB48C9EC02A0C8D593A1966
+              2AADC5D275DE2B21848E4AEE378CBDFE8BEA6F77277BED43647EFE16F93BF32C
+              418A3B1E6F428B12BE28C35C49C82C25A7EA8D3CAF385A68F7CB6D5451E2AD3B
+              B82F62333ACEF2C78EB0917B205C595B0AB0376872C8BA105EF71B584B2610F4
+              357177E17BC4A76E6CBEC183E838CBECDD0DA1D355AE5CE51949A8A69CCB8746
+              CB0ABE62E10BA9653BB3D82597D856403A0B5A2FFCFD31665864A9F95721872F
+              C011948D53593BD50AAAF934EC9579A09A4631FB577924B62DD1CD8FE2DED0D1
+              77101DD9CB2F1E764D3895226D58A69D6D54F9826B765E2552B7B3EA6FE3C953
+              B7B6F06D2BB0707EDC1B38748E07537C1B29D44B25060B34CA0554F2CB245EC7
+              B3E772DB9EEFE06F05DAD32EE2A77E7828E1FF0CE04FEAFDE5E99263A82A0000
+              000049454E44AE426082}
+            FileName = 'F:\Delphimisc1\icon-glyf-free\24x24\folders24.bmp'
+          end>
+        Name = 'folders24'
+      end
+      item
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap.TransparentColor = 536870912
+        MultiResBitmap = <
+          item
+            Width = 16
+            Height = 16
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+              61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              022949444154384FA5534D6B1351143DF3E6ABCD8CCD54DBDAA24682A455E842
+              D0B5DD59B00B4517BAEC5AEAC2FFE13FD095D0A5DA2E44DC08A2E0266A410583
+              298D69ED2031C438CE3499AFE77D6FA62105C18207E6CDBB73EF3DEF9E7BDFE0
+              7FA188A5F6E83C97D610E66E6C48DFBFA088E4F2E20A74CB223304D21EBC6613
+              EEBBA759C410FE462A0966AFDF05E22E90D0174E31AA4E0F030F03F86E0341D7
+              078F43741A1FC10C9BF65D9CCDC934B15036A27E1F5BCF57337308D6CC05E885
+              09A86A82A9734B60E608BC6F55F26C487F4E60C8E4C34AD146D47C0730B1A4A1
+              270DDDA2D2E316D02739618823274E61F6DA6D54AE2C4BFF3E48196AEB0BFC33
+              C99715F8EEA6740829D04CD24FF292183C8DF165ED81F44CCEDF8231761A2C0A
+              A0180568B603B77A3F939084FB5334D06BEFA0F9F2496E034EF932ECE3258C1E
+              7568E61D04BBDB181D9F41C4BF23F2BF66049C1B32388D3C993C39BF0CDD36C1
+              48A06115A119BFA8EE6D0A64D8F33D14D263F8D9788F334B6F15D903259F6EE0
+              D6E5DBA94CC39EE8A1508CA03117887ED321D41FA860AA86A417A053FF246325
+              81614F4963B7FA02A5853B50D21F540EB9784A8FF08813C43E93BAF9FAF1E052
+              49829D370FC50BE395AB309D22F5929A29201244794C85229A6B5AC4494443C8
+              8BCFFE87E98B2B182BD9D4D5367DA1598B5B496469CF47B8E7A15D1717083879
+              E9D920EF004179F11E1D56238D5DB43EBCCA3D34E616F54180AEF0DCCDAD418E
+              C001827C2B71B8BF11F803D911DA5DD76D14C00000000049454E44AE426082}
+            FileName = 'F:\Delphimisc1\icon-glyf-free\16x16\folders16.bmp'
+          end>
+        Name = 'folders16'
+      end
+      item
+        MultiResBitmap = <
+          item
+          end>
+        Name = 'Item 0'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'folders16'
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'folders24'
+            SourceRect.Right = 24.000000000000000000
+            SourceRect.Bottom = 24.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'folders24'
+          end>
+      end>
+    Left = 775
+    Top = 400
+  end
+  object OAuthBrowser1: TOAuthBrowser
+    Left = 185
+    Top = 400
+  end
+end

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-gb">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>WebSocket Client Echo Test</title>
+
+<style>
+ html,body{font:normal 0.9em arial,helvetica;}
+ #log {width:440px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
+ #msg {width:330px;}
+</style>
+
+<script>
+var mysocket;
+
+function init(){
+  var tx;
+  txt = $("msg");
+  txt.value="Hello from web page";
+}
+
+function connect(){
+    var server, host;
+  try
+  {
+    server = $("ServerList");
+    host = server.value;
+    log("Connecting to WebSocket server: " + host);
+    mysocket = new WebSocket(host);
+    mysocket.onopen    = function(msg){ log("Connection OK - state " + this.readyState); };
+    mysocket.onmessage = function(msg){ log("Received (" + msg.data.length + " bytes): " + (msg.data.length < 5000 ? msg.data : (msg.data.substr(0, 30) + '...'))); };
+    mysocket.onclose   = function(msg){ log("Disconnected - state " + this.readyState); };
+  }
+  catch(ex)
+  {
+    log(ex);
+  }
+  $("msg").focus();
+}
+
+function send(){
+  var txt,msg;
+  txt = $("msg");
+  msg = txt.value;
+  if(!msg){ alert("Message can not be empty"); return; }
+  txt.value="";
+  txt.focus();
+  try{ mysocket.send(msg); log('Sent (' + msg.length + " bytes): " + msg.length < 5000 ? msg : (msg.substr(0, 30) + '...')); } catch(ex){ log(ex); }
+}
+
+String.prototype.repeat = function(num)
+{
+  return new Array(num + 1).join(this);
+}
+
+function med(){
+  var msg;
+  msg = "med".repeat(1024);
+  try{ mysocket.send(msg); log('Sent (' + msg.length + " bytes): "); } catch(ex){ log(ex); }
+}
+
+function big(){
+  var msg;
+  msg = "a".repeat(1024 * 1024);
+  try{ mysocket.send(msg); log('Sent (' + msg.length + " bytes): "); } catch(ex){ log(ex); }
+}
+
+function quit(){
+  mysocket.close();
+  mysocket=null;
+}
+
+// Utilities
+function $(id){ return document.getElementById(id); }
+function log(msg){ $("log").innerHTML+="<br>"+msg; }
+function onkey(event){ if(event.keyCode==13){ send(); } }
+</script>
+
+</head>
+
+<body onload="init()">
+ <h3>ICS WebSocket Client Echo and Chat Test</h3>
+ <div id="log" style="width: 814px; height: 354px;"><br></div>
+ <br><br>
+ <p><select name="ServerList" id="ServerList" required="True" size="5">
+ <#WSSURL> </select><br><br>
+ <button onclick="connect()" id="connect">Connect to Server</button><br><br>
+ Message:&nbsp;<input id="msg" type="textbox" onkeypress="onkey(event)" style="width: 746px"/><br><br>
+ <button onclick="send()">Send</button>&nbsp;<button onclick="med()">Med</button>
+ &nbsp; <button onclick="big()">Big</button> &nbsp;<button onclick="quit()">Disconnect</button>
+ <div>Server will echo your response!</div>
+ </p>
+
+</body>
+</html>

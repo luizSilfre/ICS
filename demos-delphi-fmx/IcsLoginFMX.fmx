@@ -1,0 +1,104 @@
+object FormLogin: TFormLogin
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = 'ICS Authentication Login'
+  ClientHeight = 224
+  ClientWidth = 450
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 124.000000000000000000
+    Size.Width = 71.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'User name'
+  end
+  object LabelMethod: TLabel
+    AutoSize = True
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Authentication Method(s), select one'
+  end
+  object Label2: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 159.000000000000000000
+    Size.Width = 71.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Password'
+  end
+  object LabelPageURL: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 95.000000000000000000
+    Size.Width = 421.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Page requesting login'
+  end
+  object AuthUsername: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 89.000000000000000000
+    Position.Y = 119.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object AuthPassword: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Password = True
+    Position.X = 89.000000000000000000
+    Position.Y = 156.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object doOK: TButton
+    Default = True
+    Position.X = 119.000000000000000000
+    Position.Y = 191.000000000000000000
+    Size.Width = 75.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'OK'
+    OnClick = doOKClick
+  end
+  object doCancel: TButton
+    Position.X = 250.000000000000000000
+    Position.Y = 191.000000000000000000
+    Size.Width = 75.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Cancel'
+  end
+  object ListMethods: TListBox
+    Position.X = 10.000000000000000000
+    Position.Y = 27.000000000000000000
+    Size.Width = 426.000000000000000000
+    Size.Height = 59.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    DisableFocusEffect = True
+    ItemHeight = 13.000000000000000000
+    Items.Strings = (
+      'Basic Authentication (clear) - Realm? ')
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 422.000000000000000000
+    Viewport.Height = 55.000000000000000000
+  end
+end

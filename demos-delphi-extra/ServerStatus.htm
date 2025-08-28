@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="en-gb" http-equiv="Content-Language">
+<style>
+body {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
+    background-color: #4FFFFF
+}
+p {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
+}
+.title1 {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 36pt;
+    color: #0000FF;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    vertical-align: top;
+}
+.bodybold {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    font-style: normal;
+}
+table.data   {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
+    border: medium solid #C0C0C0;
+    border-collapse: collapse;
+    background-color: #FFFF99
+    padding: 6px;
+    border-spacing: 6px;
+}
+table.data td {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 6px;
+    border-spacing: 6px;
+    border: thin solid #C0C0C0;
+    vertical-align: top
+}
+</style>
+<title><#PageTitle></title>
+<script type="text/javascript" charset="utf-8">
+var mysocket;
+var wsconnected=0;
+
+function init(){
+    var host;
+  try
+  {
+    host = "<#WSHost>";
+  	const date = new Date();
+    block1("Connecting to WebSocket server: " + host + " at " + date.toLocaleTimeString());
+    mysocket = new WebSocket(host);
+    mysocket.onopen  = function(msg){
+    	block1("<span style='color:red'>Connection OK to " + host + "</span><p>");
+    	wsconnected=1;
+    };
+    mysocket.onmessage = function(msg){
+     	if (msg.data.startsWith("==1")) { block1(msg.data.substr(3, 999999)) };
+     	if (msg.data.startsWith("==2")) { block2(msg.data.substr(3, 999999)) };
+     };
+    mysocket.onclose   = function(msg){
+    	block1("<span style='color:red'>Disconnected from " + host + ", Updating stopped. <a href='serverinfow.htm'>Refresh</a></span><p>");
+   		wsconnected=0;
+   		mysocket=null;
+     };
+  }
+  catch(ex)
+  {
+    block1("<span style='color:red'>Failed to connnect to " + host + " - " + ex + "</span><p>");
+  }
+  $("infoblock1").focus();
+}
+
+
+function quit(){
+  mysocket.close();
+  mysocket=null;
+}
+
+// check websocket OK, every 30 seconds
+var reconnect = setInterval(function() {wsconnect()}, 30000);
+
+// Utilities
+function $(id){ return document.getElementById(id); }
+function block1(msg){ $("infoblock1").innerHTML = msg}
+function block2(msg){ $("infoblock2").innerHTML = msg}
+function wsconnect() {if (wsconnected!=1) {init()}}
+</script>
+</head>
+<body onload="init()">
+<span class="title1"><#PageTitle></span>
+<p>(Auto refreshes using WebSocket push)&nbsp;<a href="/">Manual Refresh</a></p>
+<div id="infoblock2">&nbsp;</div>
+<p></p>
+<div id="infoblock1">&nbsp;</div>
+</body>
+</html>

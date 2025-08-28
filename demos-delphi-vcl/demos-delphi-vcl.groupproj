@@ -1,0 +1,636 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9d5ee73e-c2b7-4c85-bbb7-c245dad1e831}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="OverbyteIcsSnippets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsPemTool.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsX509CertsTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsHttpRestTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsHttpsTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsHttpTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsHttpPost.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsHttpThrd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsXferTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsBasicWebServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslMultiWebServ.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslWebServ.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsWebAppServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsProxySslServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslFtpTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslFtpServ.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslMultiFtpServ.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsMailQuTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslMailSnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslMailRcv.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslSmtpServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsIpStmLogTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSimpleSslCli.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSimpleSslServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsCliDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsBinCliDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsTcpSrvIPv6.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsTcpSrv.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsJoseTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSslNewsRdr.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsNetTools.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsNetMon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsBatchDnsLookup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsTelnetClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsNsLookup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsPingTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSnmpCliTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSysLogClientDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSysLogServerDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsTimeTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsWhoisCliTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsWmiTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsMimeDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsSocksTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsThrdSrv.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsThrdSrvV2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsThrdSrvV3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsConHttp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsDllTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsDll1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsDll2.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OverbyteIcsSnippets">
+        <MSBuild Projects="OverbyteIcsSnippets.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSnippets:Clean">
+        <MSBuild Projects="OverbyteIcsSnippets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSnippets:Make">
+        <MSBuild Projects="OverbyteIcsSnippets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsPemTool">
+        <MSBuild Projects="OverbyteIcsPemTool.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsPemTool:Clean">
+        <MSBuild Projects="OverbyteIcsPemTool.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsPemTool:Make">
+        <MSBuild Projects="OverbyteIcsPemTool.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsX509CertsTst">
+        <MSBuild Projects="OverbyteIcsX509CertsTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsX509CertsTst:Clean">
+        <MSBuild Projects="OverbyteIcsX509CertsTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsX509CertsTst:Make">
+        <MSBuild Projects="OverbyteIcsX509CertsTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpRestTst">
+        <MSBuild Projects="OverbyteIcsHttpRestTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpRestTst:Clean">
+        <MSBuild Projects="OverbyteIcsHttpRestTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpRestTst:Make">
+        <MSBuild Projects="OverbyteIcsHttpRestTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpsTst">
+        <MSBuild Projects="OverbyteIcsHttpsTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpsTst:Clean">
+        <MSBuild Projects="OverbyteIcsHttpsTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpsTst:Make">
+        <MSBuild Projects="OverbyteIcsHttpsTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpTst">
+        <MSBuild Projects="OverbyteIcsHttpTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpTst:Clean">
+        <MSBuild Projects="OverbyteIcsHttpTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpTst:Make">
+        <MSBuild Projects="OverbyteIcsHttpTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpPost">
+        <MSBuild Projects="OverbyteIcsHttpPost.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpPost:Clean">
+        <MSBuild Projects="OverbyteIcsHttpPost.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpPost:Make">
+        <MSBuild Projects="OverbyteIcsHttpPost.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpThrd">
+        <MSBuild Projects="OverbyteIcsHttpThrd.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpThrd:Clean">
+        <MSBuild Projects="OverbyteIcsHttpThrd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsHttpThrd:Make">
+        <MSBuild Projects="OverbyteIcsHttpThrd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsXferTst">
+        <MSBuild Projects="OverbyteIcsXferTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsXferTst:Clean">
+        <MSBuild Projects="OverbyteIcsXferTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsXferTst:Make">
+        <MSBuild Projects="OverbyteIcsXferTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsBasicWebServer">
+        <MSBuild Projects="OverbyteIcsBasicWebServer.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsBasicWebServer:Clean">
+        <MSBuild Projects="OverbyteIcsBasicWebServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsBasicWebServer:Make">
+        <MSBuild Projects="OverbyteIcsBasicWebServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiWebServ">
+        <MSBuild Projects="OverbyteIcsSslMultiWebServ.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiWebServ:Clean">
+        <MSBuild Projects="OverbyteIcsSslMultiWebServ.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiWebServ:Make">
+        <MSBuild Projects="OverbyteIcsSslMultiWebServ.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslWebServ">
+        <MSBuild Projects="OverbyteIcsSslWebServ.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslWebServ:Clean">
+        <MSBuild Projects="OverbyteIcsSslWebServ.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslWebServ:Make">
+        <MSBuild Projects="OverbyteIcsSslWebServ.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsWebAppServer">
+        <MSBuild Projects="OverbyteIcsWebAppServer.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsWebAppServer:Clean">
+        <MSBuild Projects="OverbyteIcsWebAppServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsWebAppServer:Make">
+        <MSBuild Projects="OverbyteIcsWebAppServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsProxySslServer">
+        <MSBuild Projects="OverbyteIcsProxySslServer.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsProxySslServer:Clean">
+        <MSBuild Projects="OverbyteIcsProxySslServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsProxySslServer:Make">
+        <MSBuild Projects="OverbyteIcsProxySslServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpTst">
+        <MSBuild Projects="OverbyteIcsSslFtpTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpTst:Clean">
+        <MSBuild Projects="OverbyteIcsSslFtpTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpTst:Make">
+        <MSBuild Projects="OverbyteIcsSslFtpTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpServ">
+        <MSBuild Projects="OverbyteIcsSslFtpServ.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpServ:Clean">
+        <MSBuild Projects="OverbyteIcsSslFtpServ.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslFtpServ:Make">
+        <MSBuild Projects="OverbyteIcsSslFtpServ.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiFtpServ">
+        <MSBuild Projects="OverbyteIcsSslMultiFtpServ.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiFtpServ:Clean">
+        <MSBuild Projects="OverbyteIcsSslMultiFtpServ.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMultiFtpServ:Make">
+        <MSBuild Projects="OverbyteIcsSslMultiFtpServ.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsMailQuTst">
+        <MSBuild Projects="OverbyteIcsMailQuTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsMailQuTst:Clean">
+        <MSBuild Projects="OverbyteIcsMailQuTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsMailQuTst:Make">
+        <MSBuild Projects="OverbyteIcsMailQuTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailSnd">
+        <MSBuild Projects="OverbyteIcsSslMailSnd.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailSnd:Clean">
+        <MSBuild Projects="OverbyteIcsSslMailSnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailSnd:Make">
+        <MSBuild Projects="OverbyteIcsSslMailSnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailRcv">
+        <MSBuild Projects="OverbyteIcsSslMailRcv.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailRcv:Clean">
+        <MSBuild Projects="OverbyteIcsSslMailRcv.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslMailRcv:Make">
+        <MSBuild Projects="OverbyteIcsSslMailRcv.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslSmtpServer">
+        <MSBuild Projects="OverbyteIcsSslSmtpServer.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslSmtpServer:Clean">
+        <MSBuild Projects="OverbyteIcsSslSmtpServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslSmtpServer:Make">
+        <MSBuild Projects="OverbyteIcsSslSmtpServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsIpStmLogTst">
+        <MSBuild Projects="OverbyteIcsIpStmLogTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsIpStmLogTst:Clean">
+        <MSBuild Projects="OverbyteIcsIpStmLogTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsIpStmLogTst:Make">
+        <MSBuild Projects="OverbyteIcsIpStmLogTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslCli">
+        <MSBuild Projects="OverbyteIcsSimpleSslCli.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslCli:Clean">
+        <MSBuild Projects="OverbyteIcsSimpleSslCli.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslCli:Make">
+        <MSBuild Projects="OverbyteIcsSimpleSslCli.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslServer">
+        <MSBuild Projects="OverbyteIcsSimpleSslServer.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslServer:Clean">
+        <MSBuild Projects="OverbyteIcsSimpleSslServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSimpleSslServer:Make">
+        <MSBuild Projects="OverbyteIcsSimpleSslServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsCliDemo">
+        <MSBuild Projects="OverbyteIcsCliDemo.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsCliDemo:Clean">
+        <MSBuild Projects="OverbyteIcsCliDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsCliDemo:Make">
+        <MSBuild Projects="OverbyteIcsCliDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsBinCliDemo">
+        <MSBuild Projects="OverbyteIcsBinCliDemo.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsBinCliDemo:Clean">
+        <MSBuild Projects="OverbyteIcsBinCliDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsBinCliDemo:Make">
+        <MSBuild Projects="OverbyteIcsBinCliDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrvIPv6">
+        <MSBuild Projects="OverbyteIcsTcpSrvIPv6.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrvIPv6:Clean">
+        <MSBuild Projects="OverbyteIcsTcpSrvIPv6.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrvIPv6:Make">
+        <MSBuild Projects="OverbyteIcsTcpSrvIPv6.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrv">
+        <MSBuild Projects="OverbyteIcsTcpSrv.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrv:Clean">
+        <MSBuild Projects="OverbyteIcsTcpSrv.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsTcpSrv:Make">
+        <MSBuild Projects="OverbyteIcsTcpSrv.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsJoseTst">
+        <MSBuild Projects="OverbyteIcsJoseTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsJoseTst:Clean">
+        <MSBuild Projects="OverbyteIcsJoseTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsJoseTst:Make">
+        <MSBuild Projects="OverbyteIcsJoseTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSslNewsRdr">
+        <MSBuild Projects="OverbyteIcsSslNewsRdr.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSslNewsRdr:Clean">
+        <MSBuild Projects="OverbyteIcsSslNewsRdr.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSslNewsRdr:Make">
+        <MSBuild Projects="OverbyteIcsSslNewsRdr.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsNetTools">
+        <MSBuild Projects="OverbyteIcsNetTools.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsNetTools:Clean">
+        <MSBuild Projects="OverbyteIcsNetTools.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsNetTools:Make">
+        <MSBuild Projects="OverbyteIcsNetTools.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsNetMon">
+        <MSBuild Projects="OverbyteIcsNetMon.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsNetMon:Clean">
+        <MSBuild Projects="OverbyteIcsNetMon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsNetMon:Make">
+        <MSBuild Projects="OverbyteIcsNetMon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsBatchDnsLookup">
+        <MSBuild Projects="OverbyteIcsBatchDnsLookup.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsBatchDnsLookup:Clean">
+        <MSBuild Projects="OverbyteIcsBatchDnsLookup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsBatchDnsLookup:Make">
+        <MSBuild Projects="OverbyteIcsBatchDnsLookup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsTelnetClient">
+        <MSBuild Projects="OverbyteIcsTelnetClient.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsTelnetClient:Clean">
+        <MSBuild Projects="OverbyteIcsTelnetClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsTelnetClient:Make">
+        <MSBuild Projects="OverbyteIcsTelnetClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsNsLookup">
+        <MSBuild Projects="OverbyteIcsNsLookup.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsNsLookup:Clean">
+        <MSBuild Projects="OverbyteIcsNsLookup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsNsLookup:Make">
+        <MSBuild Projects="OverbyteIcsNsLookup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsPingTst">
+        <MSBuild Projects="OverbyteIcsPingTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsPingTst:Clean">
+        <MSBuild Projects="OverbyteIcsPingTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsPingTst:Make">
+        <MSBuild Projects="OverbyteIcsPingTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSnmpCliTst">
+        <MSBuild Projects="OverbyteIcsSnmpCliTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSnmpCliTst:Clean">
+        <MSBuild Projects="OverbyteIcsSnmpCliTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSnmpCliTst:Make">
+        <MSBuild Projects="OverbyteIcsSnmpCliTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogClientDemo">
+        <MSBuild Projects="OverbyteIcsSysLogClientDemo.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogClientDemo:Clean">
+        <MSBuild Projects="OverbyteIcsSysLogClientDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogClientDemo:Make">
+        <MSBuild Projects="OverbyteIcsSysLogClientDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogServerDemo">
+        <MSBuild Projects="OverbyteIcsSysLogServerDemo.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogServerDemo:Clean">
+        <MSBuild Projects="OverbyteIcsSysLogServerDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSysLogServerDemo:Make">
+        <MSBuild Projects="OverbyteIcsSysLogServerDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsTimeTst">
+        <MSBuild Projects="OverbyteIcsTimeTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsTimeTst:Clean">
+        <MSBuild Projects="OverbyteIcsTimeTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsTimeTst:Make">
+        <MSBuild Projects="OverbyteIcsTimeTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsWhoisCliTst">
+        <MSBuild Projects="OverbyteIcsWhoisCliTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsWhoisCliTst:Clean">
+        <MSBuild Projects="OverbyteIcsWhoisCliTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsWhoisCliTst:Make">
+        <MSBuild Projects="OverbyteIcsWhoisCliTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsWmiTst">
+        <MSBuild Projects="OverbyteIcsWmiTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsWmiTst:Clean">
+        <MSBuild Projects="OverbyteIcsWmiTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsWmiTst:Make">
+        <MSBuild Projects="OverbyteIcsWmiTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsMimeDemo">
+        <MSBuild Projects="OverbyteIcsMimeDemo.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsMimeDemo:Clean">
+        <MSBuild Projects="OverbyteIcsMimeDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsMimeDemo:Make">
+        <MSBuild Projects="OverbyteIcsMimeDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsSocksTst">
+        <MSBuild Projects="OverbyteIcsSocksTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsSocksTst:Clean">
+        <MSBuild Projects="OverbyteIcsSocksTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsSocksTst:Make">
+        <MSBuild Projects="OverbyteIcsSocksTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrv">
+        <MSBuild Projects="OverbyteIcsThrdSrv.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrv:Clean">
+        <MSBuild Projects="OverbyteIcsThrdSrv.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrv:Make">
+        <MSBuild Projects="OverbyteIcsThrdSrv.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV2">
+        <MSBuild Projects="OverbyteIcsThrdSrvV2.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV2:Clean">
+        <MSBuild Projects="OverbyteIcsThrdSrvV2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV2:Make">
+        <MSBuild Projects="OverbyteIcsThrdSrvV2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV3">
+        <MSBuild Projects="OverbyteIcsThrdSrvV3.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV3:Clean">
+        <MSBuild Projects="OverbyteIcsThrdSrvV3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsThrdSrvV3:Make">
+        <MSBuild Projects="OverbyteIcsThrdSrvV3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsConHttp">
+        <MSBuild Projects="OverbyteIcsConHttp.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsConHttp:Clean">
+        <MSBuild Projects="OverbyteIcsConHttp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsConHttp:Make">
+        <MSBuild Projects="OverbyteIcsConHttp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsDllTst">
+        <MSBuild Projects="OverbyteIcsDllTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsDllTst:Clean">
+        <MSBuild Projects="OverbyteIcsDllTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsDllTst:Make">
+        <MSBuild Projects="OverbyteIcsDllTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsDll1">
+        <MSBuild Projects="OverbyteIcsDll1.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsDll1:Clean">
+        <MSBuild Projects="OverbyteIcsDll1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsDll1:Make">
+        <MSBuild Projects="OverbyteIcsDll1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsDll2">
+        <MSBuild Projects="OverbyteIcsDll2.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsDll2:Clean">
+        <MSBuild Projects="OverbyteIcsDll2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsDll2:Make">
+        <MSBuild Projects="OverbyteIcsDll2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OverbyteIcsSnippets;OverbyteIcsPemTool;OverbyteIcsX509CertsTst;OverbyteIcsHttpRestTst;OverbyteIcsHttpsTst;OverbyteIcsHttpTst;OverbyteIcsHttpPost;OverbyteIcsHttpThrd;OverbyteIcsXferTst;OverbyteIcsBasicWebServer;OverbyteIcsSslMultiWebServ;OverbyteIcsSslWebServ;OverbyteIcsWebAppServer;OverbyteIcsProxySslServer;OverbyteIcsSslFtpTst;OverbyteIcsSslFtpServ;OverbyteIcsSslMultiFtpServ;OverbyteIcsMailQuTst;OverbyteIcsSslMailSnd;OverbyteIcsSslMailRcv;OverbyteIcsSslSmtpServer;OverbyteIcsIpStmLogTst;OverbyteIcsSimpleSslCli;OverbyteIcsSimpleSslServer;OverbyteIcsCliDemo;OverbyteIcsBinCliDemo;OverbyteIcsTcpSrvIPv6;OverbyteIcsTcpSrv;OverbyteIcsJoseTst;OverbyteIcsSslNewsRdr;OverbyteIcsNetTools;OverbyteIcsNetMon;OverbyteIcsBatchDnsLookup;OverbyteIcsTelnetClient;OverbyteIcsNsLookup;OverbyteIcsPingTst;OverbyteIcsSnmpCliTst;OverbyteIcsSysLogClientDemo;OverbyteIcsSysLogServerDemo;OverbyteIcsTimeTst;OverbyteIcsWhoisCliTst;OverbyteIcsWmiTst;OverbyteIcsMimeDemo;OverbyteIcsSocksTst;OverbyteIcsThrdSrv;OverbyteIcsThrdSrvV2;OverbyteIcsThrdSrvV3;OverbyteIcsConHttp;OverbyteIcsDllTst;OverbyteIcsDll1;OverbyteIcsDll2"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OverbyteIcsSnippets:Clean;OverbyteIcsPemTool:Clean;OverbyteIcsX509CertsTst:Clean;OverbyteIcsHttpRestTst:Clean;OverbyteIcsHttpsTst:Clean;OverbyteIcsHttpTst:Clean;OverbyteIcsHttpPost:Clean;OverbyteIcsHttpThrd:Clean;OverbyteIcsXferTst:Clean;OverbyteIcsBasicWebServer:Clean;OverbyteIcsSslMultiWebServ:Clean;OverbyteIcsSslWebServ:Clean;OverbyteIcsWebAppServer:Clean;OverbyteIcsProxySslServer:Clean;OverbyteIcsSslFtpTst:Clean;OverbyteIcsSslFtpServ:Clean;OverbyteIcsSslMultiFtpServ:Clean;OverbyteIcsMailQuTst:Clean;OverbyteIcsSslMailSnd:Clean;OverbyteIcsSslMailRcv:Clean;OverbyteIcsSslSmtpServer:Clean;OverbyteIcsIpStmLogTst:Clean;OverbyteIcsSimpleSslCli:Clean;OverbyteIcsSimpleSslServer:Clean;OverbyteIcsCliDemo:Clean;OverbyteIcsBinCliDemo:Clean;OverbyteIcsTcpSrvIPv6:Clean;OverbyteIcsTcpSrv:Clean;OverbyteIcsJoseTst:Clean;OverbyteIcsSslNewsRdr:Clean;OverbyteIcsNetTools:Clean;OverbyteIcsNetMon:Clean;OverbyteIcsBatchDnsLookup:Clean;OverbyteIcsTelnetClient:Clean;OverbyteIcsNsLookup:Clean;OverbyteIcsPingTst:Clean;OverbyteIcsSnmpCliTst:Clean;OverbyteIcsSysLogClientDemo:Clean;OverbyteIcsSysLogServerDemo:Clean;OverbyteIcsTimeTst:Clean;OverbyteIcsWhoisCliTst:Clean;OverbyteIcsWmiTst:Clean;OverbyteIcsMimeDemo:Clean;OverbyteIcsSocksTst:Clean;OverbyteIcsThrdSrv:Clean;OverbyteIcsThrdSrvV2:Clean;OverbyteIcsThrdSrvV3:Clean;OverbyteIcsConHttp:Clean;OverbyteIcsDllTst:Clean;OverbyteIcsDll1:Clean;OverbyteIcsDll2:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OverbyteIcsSnippets:Make;OverbyteIcsPemTool:Make;OverbyteIcsX509CertsTst:Make;OverbyteIcsHttpRestTst:Make;OverbyteIcsHttpsTst:Make;OverbyteIcsHttpTst:Make;OverbyteIcsHttpPost:Make;OverbyteIcsHttpThrd:Make;OverbyteIcsXferTst:Make;OverbyteIcsBasicWebServer:Make;OverbyteIcsSslMultiWebServ:Make;OverbyteIcsSslWebServ:Make;OverbyteIcsWebAppServer:Make;OverbyteIcsProxySslServer:Make;OverbyteIcsSslFtpTst:Make;OverbyteIcsSslFtpServ:Make;OverbyteIcsSslMultiFtpServ:Make;OverbyteIcsMailQuTst:Make;OverbyteIcsSslMailSnd:Make;OverbyteIcsSslMailRcv:Make;OverbyteIcsSslSmtpServer:Make;OverbyteIcsIpStmLogTst:Make;OverbyteIcsSimpleSslCli:Make;OverbyteIcsSimpleSslServer:Make;OverbyteIcsCliDemo:Make;OverbyteIcsBinCliDemo:Make;OverbyteIcsTcpSrvIPv6:Make;OverbyteIcsTcpSrv:Make;OverbyteIcsJoseTst:Make;OverbyteIcsSslNewsRdr:Make;OverbyteIcsNetTools:Make;OverbyteIcsNetMon:Make;OverbyteIcsBatchDnsLookup:Make;OverbyteIcsTelnetClient:Make;OverbyteIcsNsLookup:Make;OverbyteIcsPingTst:Make;OverbyteIcsSnmpCliTst:Make;OverbyteIcsSysLogClientDemo:Make;OverbyteIcsSysLogServerDemo:Make;OverbyteIcsTimeTst:Make;OverbyteIcsWhoisCliTst:Make;OverbyteIcsWmiTst:Make;OverbyteIcsMimeDemo:Make;OverbyteIcsSocksTst:Make;OverbyteIcsThrdSrv:Make;OverbyteIcsThrdSrvV2:Make;OverbyteIcsThrdSrvV3:Make;OverbyteIcsConHttp:Make;OverbyteIcsDllTst:Make;OverbyteIcsDll1:Make;OverbyteIcsDll2:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

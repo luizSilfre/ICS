@@ -1,0 +1,73 @@
+ICS - Internet Component Suite
+==============================
+(Aka FPIETTE's Components)
+
+
+http://www.overbyte.be/
+
+
+Legal issues:
+-------------
+
+Copyright (C) 1997-2015 by François PIETTE
+Rue de Grady 24, 4053 Embourg, Belgium
+<francois.piette@overbyte.be>
+
+SSL implementation includes code written by Arno Garrels,
+Berlin, Germany, contact: <arno.garrels@gmx.de>
+
+ICS is freeware.
+
+This software is provided 'as-is', without any express or
+implied warranty. In no event will the author be held liable
+for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any
+purpose, including commercial applications, and to alter it
+and redistribute it freely, subject to the following
+restrictions:
+
+1. The origin of this software must not be misrepresented,
+   you must not claim that you wrote the original software.
+   If you use this software in a product, an acknowledgment
+   in the product documentation would be appreciated but is
+   not required.
+
+2. Altered source versions must be plainly marked as such, and
+   must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+   distribution.
+
+4. You must register this software by sending a picture postcard
+   to the author. Use a nice stamp and mention your name, street
+   address, EMail address and any comment you like to say.
+
+5. As this code make use of OpenSSL, your rights are restricted
+   by OpenSSL license as soon as you use any SSL feature.
+   See http://www.openssl.org for details.
+
+
+
+Donate
+------
+
+ICS is freeware. You can use it without paying anything except the registration
+postcard (see "register" below). But of course donations are welcome. You can
+send cash (Euro currency or US Dollars) in an envelop to my street address or
+buy a gift certificate at Amazon in the UK. I will then use it to buy books.
+Here is the direct URL at Amazon UK (nearest to my home, please don't use another):
+http://www.amazon.co.uk/exec/obidos/gc-email-order1/ref=g_gc_email/202-6198323-6681414
+For more generous amount, contact me by email.
+
+
+Register
+--------
+
+ICS is freeware. If you use the components, you must register by sending a
+picture postcard showing the area you live in and some beautiful stamps for
+my kids who are stamp collectors. Do not use an envelop, I collect USED
+postcards sent to me. Write on the postcard that it is your ICS registration.
+
+Address your card to: Francois PIETTE, rue de Grady 24, 4053 Embourg, Belgium.
+Don't forget to mention your name, street address, EMail and web site.

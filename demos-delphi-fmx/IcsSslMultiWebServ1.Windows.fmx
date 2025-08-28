@@ -1,0 +1,7 @@
+inherited WeblServerForm_Windows: TWeblServerForm_Windows
+  DesignerMasterStyle = 0
+  inherited DisplayMemo: TMemo
+    Viewport.Width = 852.000000000000000000
+    Viewport.Height = 523.000000000000000000
+  end
+end

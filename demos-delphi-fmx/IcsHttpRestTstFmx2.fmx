@@ -1,0 +1,39 @@
+object JsonObjectWin: TJsonObjectWin
+  Left = 0
+  Top = 0
+  Caption = 'Json Object'
+  ClientHeight = 429
+  ClientWidth = 686
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Orientations = [Landscape]
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object GridSubResp: TStringGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 686.000000000000000000
+    Size.Height = 429.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Options = [ColumnResize, ColumnMove, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+    OnCellDblClick = GridSubRespCellDblClick
+    Viewport.Width = 686.000000000000000000
+    Viewport.Height = 429.000000000000000000
+    object StringColumn1: TStringColumn
+    end
+    object StringColumn2: TStringColumn
+      Size.Width = 75.000000000000000000
+    end
+    object StringColumn3: TStringColumn
+      Header = 'My Header'
+      Size.Width = 419.000000000000000000
+    end
+    object StringColumn4: TStringColumn
+      Size.Width = 463.000000000000000000
+    end
+  end
+end

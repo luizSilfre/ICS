@@ -1,0 +1,172 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E807D889-9D68-47D7-8759-580E1111F049}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Packages\IcsCommonCBNewRun.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsCommonCBNewDesign.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsVclCBNewRun.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsVclCBNewDesign.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsFmxCBNewRun.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsFmxCBNewDesign.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IcsCommonCBNewRun">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewRun.cbproj"/>
+    </Target>
+    <Target Name="IcsCommonCBNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewRun.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonCBNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewRun.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsCommonCBNewDesign">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewDesign.cbproj"/>
+    </Target>
+    <Target Name="IcsCommonCBNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewDesign.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonCBNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsCommonCBNewDesign.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsVclCBNewRun">
+        <MSBuild Projects="..\Packages\IcsVclCBNewRun.cbproj"/>
+    </Target>
+    <Target Name="IcsVclCBNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsVclCBNewRun.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsVclCBNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsVclCBNewRun.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsVclCBNewDesign">
+        <MSBuild Projects="..\Packages\IcsVclCBNewDesign.cbproj"/>
+    </Target>
+    <Target Name="IcsVclCBNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsVclCBNewDesign.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsVclCBNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsVclCBNewDesign.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsFmxCBNewRun">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewRun.cbproj"/>
+    </Target>
+    <Target Name="IcsFmxCBNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewRun.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsFmxCBNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewRun.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsFmxCBNewDesign">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewDesign.cbproj"/>
+    </Target>
+    <Target Name="IcsFmxCBNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewDesign.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsFmxCBNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsFmxCBNewDesign.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IcsCommonCBNewRun;IcsCommonCBNewDesign;IcsVclCBNewRun;IcsVclCBNewDesign;IcsFmxCBNewRun;IcsFmxCBNewDesign"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IcsCommonCBNewRun:Clean;IcsCommonCBNewDesign:Clean;IcsVclCBNewRun:Clean;IcsVclCBNewDesign:Clean;IcsFmxCBNewRun:Clean;IcsFmxCBNewDesign:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IcsCommonCBNewRun:Make;IcsCommonCBNewDesign:Make;IcsVclCBNewRun:Make;IcsVclCBNewDesign:Make;IcsFmxCBNewRun:Make;IcsFmxCBNewDesign:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='All packages'">
+        <BuildGroupProject Include="..\Packages\IcsFmxCBNewDesign.cbproj">
+            <ProjectGuid>{5FC71E67-956B-4D17-94A3-EF033AE8F547}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsVclCBNewRun.cbproj">
+            <ProjectGuid>{6C7913B1-1951-4432-B5DB-37FEB6653783}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsFmxCBNewRun.cbproj">
+            <ProjectGuid>{1B2F65E1-82BB-4692-897D-62845B3CED67}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsVclCBNewDesign.cbproj">
+            <ProjectGuid>{B14DC708-04B5-471F-9127-C94DDF198FA1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonCBNewRun.cbproj">
+            <ProjectGuid>{774205D2-4CFA-4C54-BCA1-0321468EDFAC}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonCBNewDesign.cbproj">
+            <ProjectGuid>{1010FD9F-B3E6-4535-A2BD-55D34CEDE4A0}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64;Win64x</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='VCL/FMX All'">
+        <BuildGroupProject Include="..\Packages\IcsFmxCBNewDesign.cbproj">
+            <ProjectGuid>{5FC71E67-956B-4D17-94A3-EF033AE8F547}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsVclCBNewRun.cbproj">
+            <ProjectGuid>{6C7913B1-1951-4432-B5DB-37FEB6653783}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsFmxCBNewRun.cbproj">
+            <ProjectGuid>{1B2F65E1-82BB-4692-897D-62845B3CED67}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsVclCBNewDesign.cbproj">
+            <ProjectGuid>{B14DC708-04B5-471F-9127-C94DDF198FA1}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonCBNewRun.cbproj">
+            <ProjectGuid>{774205D2-4CFA-4C54-BCA1-0321468EDFAC}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonCBNewDesign.cbproj">
+            <ProjectGuid>{1010FD9F-B3E6-4535-A2BD-55D34CEDE4A0}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

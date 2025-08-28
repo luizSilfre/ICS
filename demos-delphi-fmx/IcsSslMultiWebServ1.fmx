@@ -1,0 +1,248 @@
+object WeblServerForm: TWeblServerForm
+  Left = 339
+  Top = 282
+  Caption = 
+    'ICS FMX Web Application Server  - https://www.overbyte.be - 7 Fe' +
+    'b 2024'
+  ClientHeight = 564
+  ClientWidth = 852
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  Left = 339
+  Top = 282
+  DesignerMasterStyle = 0
+  object ToolsPanel: TPanel
+    Align = Top
+    Size.Width = 852.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object StartButton: TButton
+      Default = True
+      Position.X = 29.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = '&Start'
+      OnClick = StartButtonClick
+    end
+    object StopButton: TButton
+      Enabled = False
+      Position.X = 111.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'S&top'
+      OnClick = StopButtonClick
+    end
+    object RecheckCertsButton: TButton
+      Position.X = 184.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Recheck Ssl Certs'
+      OnClick = RecheckCertsButtonClick
+    end
+    object DisplayHeaderCheckBox: TCheckBox
+      Position.X = 497.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 179.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Display HTTP Protocol'
+    end
+    object DisplaySslInfo: TCheckBox
+      IsChecked = True
+      Position.X = 315.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 174.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Display SSL Client Info'
+    end
+  end
+  object DisplayMemo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'Please note that this sample takes all it'#39's settings from an INI' +
+        ' file.  '
+      ''
+      
+        'The INI file needs to be manually edited to add multiple Host se' +
+        'ctions to '
+      
+        'define the web server behaviour.  A default INI file is copied t' +
+        'o user'
+      'space when first run and the file to edit shown on start-up. ')
+    Align = Client
+    Size.Width = 852.000000000000000000
+    Size.Height = 523.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Top = 41
+    Viewport.Width = 852.000000000000000000
+    Viewport.Height = 523.000000000000000000
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 325
+    Top = 130
+  end
+  object SslHttpAppSrv1: TSslHttpAppSrv
+    ListenBacklog = 5
+    MultiListenSockets = <>
+    Port = '80'
+    Addr = '0.0.0.0'
+    SocketFamily = sfIPv4
+    MaxClients = 0
+    DocDir = 'c:\wwwroot'
+    TemplateDir = 'c:\wwwroot\templates'
+    DefaultDoc = 'index.html'
+    LingerOnOff = wsLingerNoSet
+    LingerTimeout = 0
+    Options = []
+    KeepAliveTimeSec = 10
+    KeepAliveTimeXferSec = 300
+    MaxRequestsKeepAlive = 100
+    SizeCompressMin = 5000
+    SizeCompressMax = 5000000
+    MaxBlkSize = 8192
+    BandwidthLimit = 0
+    BandwidthSampling = 1000
+    ServerHeader = 'Server: ICS-HttpServer-8.69'
+    OnServerStarted = SslHttpAppSrv1ServerStarted
+    OnServerStopped = SslHttpAppSrv1ServerStopped
+    OnClientConnect = SslHttpAppSrv1ClientConnect
+    OnGetDocument = SslHttpAppSrv1GetDocument
+    OnHeadDocument = SslHttpAppSrv1HeadDocument
+    OnPostDocument = SslHttpAppSrv1PostDocument
+    OnOptionsDocument = SslHttpAppSrv1OptionsDocument
+    OnPutDocument = SslHttpAppSrv1PutDocument
+    OnDeleteDocument = SslHttpAppSrv1DeleteDocument
+    OnTraceDocument = SslHttpAppSrv1TraceDocument
+    OnPatchDocument = SslHttpAppSrv1PatchDocument
+    OnBeforeProcessRequest = SslHttpAppSrv1BeforeProcessRequest
+    OnAfterAnswer = SslHttpAppSrv1AfterAnswer
+    OnHttpMimeContentType = SslHttpAppSrv1HttpMimeContentType
+    OnAuthGetPassword = SslHttpAppSrv1AuthGetPassword
+    OnAuthResult = SslHttpAppSrv1AuthResult
+    OnAuthGetType = SslHttpAppSrv1AuthGetType
+    OnAuthNtlmBeforeValidate = SslHttpAppSrv1AuthNtlmBeforeValidate
+    AuthTypes = []
+    AuthRealm = 'ics'
+    OnBgException = SslHttpAppSrv1BgException
+    SocketErrs = wsErrFriendly
+    ExclusiveAddr = True
+    onWellKnownDir = SslHttpAppSrv1WellKnownDir
+    OnHttpRespHdr = SslHttpAppSrv1HttpRespHdr
+    SessionTimeout = 300
+    MaxSessions = 100
+    MaxUploadMB = 200
+    MaxStreamMB = 50
+    OnDeleteSession = SslHttpAppSrv1DeleteSession
+    OnVirtualException = SslHttpAppSrv1VirtualException
+    OnDisplay = SslHttpAppSrv1Display
+    SslEnable = False
+    IcsHosts = <>
+    SslCliCertMethod = sslCliCertNone
+    SslCertAutoOrder = False
+    CertExpireDays = 30
+    SslX509Certs = IcsSslX509Certs
+    OcspSrvStapling = False
+    OnSslHandshakeDone = SslHttpAppSrv1SslHandshakeDone
+    OnSslServerName = SslHttpAppSrv1SslServerName
+    OnSslAlpnSelect = SslHttpAppSrv1SslAlpnSelect
+    Left = 400
+    Top = 130
+  end
+  object IcsSslX509Certs: TSslX509Certs
+    AcmeAccKeyType = PrivKeyRsa2048
+    AutoOrderComplete = False
+    CertSubAltNames = <>
+    CertCsrOrigin = CsrOriginProps
+    CertOutFmts = []
+    CertSerNumType = SerNumRandom
+    CertSignDigestType = Digest_sha256
+    CertValidity = 365
+    DebugLevel = DebugConn
+    DomWebSrvIP = '0.0.0.0'
+    DomWebSrvIP2 = '::'
+    MsCertLoc = MsLocMachine
+    KeepOldCA = False
+    LogJson = False
+    LogPkeys = False
+    OAAuthType = OAuthTypeWeb
+    OARefreshAuto = False
+    OARefrMinsPrior = 120
+    OAWebSrvIP = '127.0.0.1'
+    OAWebSrvPort = '8080'
+    PrivKeyCipher = PrivKeyEncNone
+    PrivKeyType = PrivKeyRsa2048
+    AutoAccountClose = False
+    AccountTimeOutMins = 10
+    SeqOrderNum = 0
+    SocketFamily = sfAny
+    SuppCertChallenge = ChallNone
+    SupplierProto = SuppProtoNone
+    OnCertProg = IcsSslX509CertsCertProg
+    OnNewCert = IcsSslX509CertsNewCert
+    OnOAuthAuthUrl = IcsSslX509CertsOAuthAuthUrl
+    OnChallengeDNS = IcsSslX509CertsChallengeDNS
+    Left = 255
+    Top = 130
+  end
+  object IcsMailQueue: TIcsMailQueue
+    MailServers = <>
+    Active = False
+    ArchiveSent = False
+    DeleteFailed = True
+    Debug = False
+    BodyDebug = False
+    RetryList = '5,5,10,10,30,30,60,90,300,300,300,300'
+    QuStartDelay = 3
+    SslVerMethod = MailSslVerNone
+    SslRevocation = False
+    SslReportChain = False
+    SslRootFile = 'RootCaCertsBundle.pem'
+    MailCliSecurity = sslCliSecTls11
+    SmtpMethod = MailSmtpRelay
+    FileQuSent = '"MailQuSent-"yyyymmdd".log'
+    LogQuSent = False
+    MxSrvUseSsl = False
+    MxSocketFamily = sfIPv4
+    LogEvent = IcsMailQueueLogEvent
+    OATokenEvent = IcsMailQueueOATokenEvent
+    OcspCacheFile = 'ocspmailqucache.recs'
+    NoSSL = False
+    Left = 165
+    Top = 130
+  end
+  object IcsRestEmail: TIcsRestEmail
+    RestEmailType = RestEmailGoogle
+    ForceLogin = False
+    LoginTimeout = 120
+    HdrFieldList = 'to,from,subject,date'
+    DebugLevel = DebugNone
+    OAAuthType = OAuthTypeWeb
+    MsUserAuth = 'consumers'
+    OnEmailProg = IcsRestEmailEmailProg
+    OnEmailNewToken = IcsRestEmailEmailNewToken
+    OnOAAuthUrl = IcsRestEmailOAAuthUrl
+    Left = 85
+    Top = 130
+  end
+end

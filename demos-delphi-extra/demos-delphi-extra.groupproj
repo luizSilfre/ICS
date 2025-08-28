@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{b9648cf1-ed87-425d-bcc3-cb1f446b43fb}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FrameBrowserIcs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsDDWebService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OverbyteIcsMQTTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsAppMon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsAppMonMan.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FrameBrowserIcs">
+        <MSBuild Projects="FrameBrowserIcs.dproj"/>
+    </Target>
+    <Target Name="FrameBrowserIcs:Clean">
+        <MSBuild Projects="FrameBrowserIcs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FrameBrowserIcs:Make">
+        <MSBuild Projects="FrameBrowserIcs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsDDWebService">
+        <MSBuild Projects="OverbyteIcsDDWebService.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsDDWebService:Clean">
+        <MSBuild Projects="OverbyteIcsDDWebService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsDDWebService:Make">
+        <MSBuild Projects="OverbyteIcsDDWebService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OverbyteIcsMQTTst">
+        <MSBuild Projects="OverbyteIcsMQTTst.dproj"/>
+    </Target>
+    <Target Name="OverbyteIcsMQTTst:Clean">
+        <MSBuild Projects="OverbyteIcsMQTTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OverbyteIcsMQTTst:Make">
+        <MSBuild Projects="OverbyteIcsMQTTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsAppMon">
+        <MSBuild Projects="IcsAppMon.dproj"/>
+    </Target>
+    <Target Name="IcsAppMon:Clean">
+        <MSBuild Projects="IcsAppMon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsAppMon:Make">
+        <MSBuild Projects="IcsAppMon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsAppMonMan">
+        <MSBuild Projects="IcsAppMonMan.dproj"/>
+    </Target>
+    <Target Name="IcsAppMonMan:Clean">
+        <MSBuild Projects="IcsAppMonMan.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsAppMonMan:Make">
+        <MSBuild Projects="IcsAppMonMan.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FrameBrowserIcs;OverbyteIcsDDWebService;OverbyteIcsMQTTst;IcsAppMon;IcsAppMonMan"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FrameBrowserIcs:Clean;OverbyteIcsDDWebService:Clean;OverbyteIcsMQTTst:Clean;IcsAppMon:Clean;IcsAppMonMan:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FrameBrowserIcs:Make;OverbyteIcsDDWebService:Make;OverbyteIcsMQTTst:Make;IcsAppMon:Make;IcsAppMonMan:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

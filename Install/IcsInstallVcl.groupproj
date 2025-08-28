@@ -1,0 +1,98 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{30D8AA58-0A26-4C23-AD0A-2243BA3306F8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Packages\IcsCommonNewRun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsVclNewRun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsCommonNewDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsVclNewDesign.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IcsCommonNewRun">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj"/>
+    </Target>
+    <Target Name="IcsCommonNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsVclNewRun">
+        <MSBuild Projects="..\Packages\IcsVclNewRun.dproj"/>
+    </Target>
+    <Target Name="IcsVclNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsVclNewRun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsVclNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsVclNewRun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsVclNewDesign">
+        <MSBuild Projects="..\Packages\IcsVclNewDesign.dproj"/>
+    </Target>
+    <Target Name="IcsVclNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsVclNewDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsVclNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsVclNewDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IcsCommonNewRun;IcsVclNewRun;IcsCommonNewDesign;IcsVclNewDesign"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IcsCommonNewRun:Clean;IcsVclNewRun:Clean;IcsCommonNewDesign:Clean;IcsVclNewDesign:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IcsCommonNewRun:Make;IcsVclNewRun:Make;IcsCommonNewDesign:Make;IcsVclNewDesign:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='VCL Projects'">
+        <BuildGroupProject Include="..\Packages\IcsVclNewDesign.dproj">
+            <ProjectGuid>{64B470D0-2204-4CF1-B8F5-E2BE8764BBA8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonNewDesign.dproj">
+            <ProjectGuid>{C1F49B17-09DF-4A2B-B78E-0A5FF0F54171}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonNewRun.dproj">
+            <ProjectGuid>{326FE026-97FA-47A1-BAB9-9F56437E7CC3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsVclNewRun.dproj">
+            <ProjectGuid>{4FBE10B7-7597-47D6-8CEA-9E9600499EA2}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

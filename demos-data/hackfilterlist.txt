@@ -1,0 +1,33 @@
+* web server filter list, path= or remaddr=
+path=.php      *** remove if you want to support PHP, etc
+path=wp-login.php   *** we are not using WordPress!!
+path=.pl       *** not using Perl
+path=/cgi      *** remove if using cgi
+path=;echo     *** SQL injection
+path=/..       *** parent paths
+path=phpmy
+path=myadmin
+path=/sql/
+path=/pma
+path=mysql
+path=/php
+path=web.xml
+path=sqlmap
+path=#dev
+path=/.git/
+path=\..\..\..\
+path=c:/windows
+path=/wallet.dat       *** 2 July 2019 bitcoin
+path=/webdav/          *** 2 July 2019
+path=${jndi:            *** 24 Dec 2021 log4j
+path=$%7Bjndi:            *** 24 Dec 2021 log4j
+path=${::-j}${::-n}${::-d}${::-i}   *** 24 Dec 2021 log4j
+path=/.env             ** Apr 2022
+useragent=masscan      ** June 2022 masscan/1.3+(https://github.com/robertdavidgraham/masscan)
+referrer=python-requests    ** May 2021 hacking
+remaddr=192.168.222.
+remhost=tor-
+remhost=torexit
+remhost=torproject
+remhost=torservers
+

@@ -1,0 +1,98 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{30D8AA58-0A26-4C23-AD0A-2243BA3306F8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Packages\IcsCommonNewRun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsFmxNewRun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsCommonNewDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\IcsFmxNewDesign.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IcsCommonNewRun">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj"/>
+    </Target>
+    <Target Name="IcsCommonNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsCommonNewRun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsFmxNewRun">
+        <MSBuild Projects="..\Packages\IcsFmxNewRun.dproj"/>
+    </Target>
+    <Target Name="IcsFmxNewRun:Clean">
+        <MSBuild Projects="..\Packages\IcsFmxNewRun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsFmxNewRun:Make">
+        <MSBuild Projects="..\Packages\IcsFmxNewRun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCommonNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsCommonNewDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsFmxNewDesign">
+        <MSBuild Projects="..\Packages\IcsFmxNewDesign.dproj"/>
+    </Target>
+    <Target Name="IcsFmxNewDesign:Clean">
+        <MSBuild Projects="..\Packages\IcsFmxNewDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsFmxNewDesign:Make">
+        <MSBuild Projects="..\Packages\IcsFmxNewDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IcsCommonNewRun;IcsFmxNewRun;IcsCommonNewDesign;IcsFmxNewDesign"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IcsCommonNewRun:Clean;IcsFmxNewRun:Clean;IcsCommonNewDesign:Clean;IcsFmxNewDesign:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IcsCommonNewRun:Make;IcsFmxNewRun:Make;IcsCommonNewDesign:Make;IcsFmxNewDesign:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='FMX Only'">
+        <BuildGroupProject Include="..\Packages\IcsCommonNewDesign.dproj">
+            <ProjectGuid>{C1F49B17-09DF-4A2B-B78E-0A5FF0F54171}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsFmxNewDesign.dproj">
+            <ProjectGuid>{09A2AD35-9818-44CB-B149-A9100F779D5F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsFmxNewRun.dproj">
+            <ProjectGuid>{BCD0545C-3A49-4959-BB73-0741D6E1D23B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\Packages\IcsCommonNewRun.dproj">
+            <ProjectGuid>{326FE026-97FA-47A1-BAB9-9F56437E7CC3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

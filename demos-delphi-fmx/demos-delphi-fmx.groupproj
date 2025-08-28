@@ -1,0 +1,120 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D083C8C0-ADC4-41D2-B66D-3F8A4ED728D9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="IcsHttpsTst.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsHttpRestTstFmx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsSslMultiWebServ.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsMailSnd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsPemTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsTcpSrvIPv6.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsBatchDnsLookup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IcsCliDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IcsHttpsTst">
+        <MSBuild Projects="IcsHttpsTst.dproj"/>
+    </Target>
+    <Target Name="IcsHttpsTst:Clean">
+        <MSBuild Projects="IcsHttpsTst.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsHttpsTst:Make">
+        <MSBuild Projects="IcsHttpsTst.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsHttpRestTstFmx">
+        <MSBuild Projects="IcsHttpRestTstFmx.dproj"/>
+    </Target>
+    <Target Name="IcsHttpRestTstFmx:Clean">
+        <MSBuild Projects="IcsHttpRestTstFmx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsHttpRestTstFmx:Make">
+        <MSBuild Projects="IcsHttpRestTstFmx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsSslMultiWebServ">
+        <MSBuild Projects="IcsSslMultiWebServ.dproj"/>
+    </Target>
+    <Target Name="IcsSslMultiWebServ:Clean">
+        <MSBuild Projects="IcsSslMultiWebServ.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsSslMultiWebServ:Make">
+        <MSBuild Projects="IcsSslMultiWebServ.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsMailSnd">
+        <MSBuild Projects="IcsMailSnd.dproj"/>
+    </Target>
+    <Target Name="IcsMailSnd:Clean">
+        <MSBuild Projects="IcsMailSnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsMailSnd:Make">
+        <MSBuild Projects="IcsMailSnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsPemTest">
+        <MSBuild Projects="IcsPemTest.dproj"/>
+    </Target>
+    <Target Name="IcsPemTest:Clean">
+        <MSBuild Projects="IcsPemTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsPemTest:Make">
+        <MSBuild Projects="IcsPemTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsTcpSrvIPv6">
+        <MSBuild Projects="IcsTcpSrvIPv6.dproj"/>
+    </Target>
+    <Target Name="IcsTcpSrvIPv6:Clean">
+        <MSBuild Projects="IcsTcpSrvIPv6.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsTcpSrvIPv6:Make">
+        <MSBuild Projects="IcsTcpSrvIPv6.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsBatchDnsLookup">
+        <MSBuild Projects="IcsBatchDnsLookup.dproj"/>
+    </Target>
+    <Target Name="IcsBatchDnsLookup:Clean">
+        <MSBuild Projects="IcsBatchDnsLookup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsBatchDnsLookup:Make">
+        <MSBuild Projects="IcsBatchDnsLookup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IcsCliDemo">
+        <MSBuild Projects="IcsCliDemo.dproj"/>
+    </Target>
+    <Target Name="IcsCliDemo:Clean">
+        <MSBuild Projects="IcsCliDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IcsCliDemo:Make">
+        <MSBuild Projects="IcsCliDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IcsHttpsTst;IcsHttpRestTstFmx;IcsSslMultiWebServ;IcsMailSnd;IcsPemTest;IcsTcpSrvIPv6;IcsBatchDnsLookup;IcsCliDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IcsHttpsTst:Clean;IcsHttpRestTstFmx:Clean;IcsSslMultiWebServ:Clean;IcsMailSnd:Clean;IcsPemTest:Clean;IcsTcpSrvIPv6:Clean;IcsBatchDnsLookup:Clean;IcsCliDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IcsHttpsTst:Make;IcsHttpRestTstFmx:Make;IcsSslMultiWebServ:Make;IcsMailSnd:Make;IcsPemTest:Make;IcsTcpSrvIPv6:Make;IcsBatchDnsLookup:Make;IcsCliDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
